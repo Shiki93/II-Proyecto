@@ -1,0 +1,6 @@
+11;España
+21;Francia
+43;Panama
+96;Costa Rica
+11;Chile
+100;Ecuador

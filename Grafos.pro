@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2016-06-19T15:20:26
+# Project created by QtCreator 2016-06-19T18:52:47
 #
 #-------------------------------------------------
 
@@ -16,17 +16,27 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    grafo.cpp \
-    colas.cpp \
-    arbolnario.cpp \
-    pila.cpp \
-    listasimplean.cpp \
-    lista.cpp
+    ArbolNario.cpp \
+    ListaSimple.cpp \
+    Colas.cpp \
+    Grafo.cpp \
+    Pila.cpp \
+    GrafoCiudades.cpp \
+    listaCiudades.cpp \
+    Lista.cpp \
+    NodoCola.cpp
 
 HEADERS += \
-    grafo.h \
-    colas.h \
-    arbolnario.h \
-    pila.h \
-    listasimplean.h \
-    lista.h
+    ArbolNario.h \
+    ListaSimpleAN.h \
+    Colas.h \
+    Grafo.h \
+    Pila.h \
+    NodoGrafo.h \
+    NodoAdyacente.h \
+    GrafoCiudades.h \
+    NodoAdyacenteC.h \
+    NodoGrafoC.h \
+    listaCiudades.h \
+    Lista.h \
+    NodoCola.h
