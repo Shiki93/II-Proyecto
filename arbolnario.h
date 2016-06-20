@@ -1,6 +1,6 @@
 #ifndef ARBOLNARIO_H
 #define ARBOLNARIO_H
-
+#include <QtCore>
 #include <QString>
 #include "listasimplean.h"
 

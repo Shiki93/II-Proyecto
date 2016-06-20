@@ -1,6 +1,6 @@
 #ifndef LISTASIMPLEAN_H
 #define LISTASIMPLEAN_H
-
+#include <QtCore>
 class NodoLista{
 public:
     int arr;
@@ -21,7 +21,10 @@ public:
     NodoLista *UltimoNodo;
 
     //Constructor
-    ListaSimple(){PrimerNodo = UltimoNodo = NULL;}
+    ListaSimple(){
+        UltimoNodo = NULL;
+        PrimerNodo = UltimoNodo;
+    }
     //Retorna si esta vacia la lista
     int VaciaLista(){return PrimerNodo == NULL;}
     //Inserta al inicio un elemento

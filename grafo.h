@@ -1,6 +1,6 @@
 #ifndef GRAFO_H
 #define GRAFO_H
-
+#include <QtCore>
 #include <QString>
 #include "colas.h"
 #include "arbolnario.h"
@@ -13,13 +13,19 @@
 typedef class NodoGrafo{
 public:
     NodoGrafo *sig_vertice;
-    class NodoAdyacente *siguiente_ady;
+    NodoAdyacente *siguiente_ady;
     int Tipo;
-    QString nombre;
+    //grafopequeño
+    //Para Paises
+    int CodVerticeGG;
+    QString NombrePais;
+    //la Posicion en donde esta
+    int pos;
     //Constructores inicial
     NodoGrafo();
     //Constructor para paises
-    NodoGrafo(int, QString, int);
+    NodoGrafo(int,string,int);
+    GrafoCiudades grafoGP;
 }*pnodografo;
 
 class NodoAdyacente{
@@ -27,7 +33,7 @@ public:
     NodoAdyacente *siguiente_ady;
     int Cod;
     int peso, pos;
-    QString nombre;
+    QString NombrePais;
     //Constructores inicial
     NodoAdyacente();
     //Constructor para nodos
