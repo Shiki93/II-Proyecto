@@ -20,8 +20,6 @@ SOURCES += main.cpp \
     ListaSimple.cpp \
     Colas.cpp \
     Grafo.cpp \
-    GrafoCiudades.cpp \
-    listaCiudades.cpp \
     Lista.cpp \
     NodoCola.cpp \
     Pila.cpp
@@ -33,10 +31,6 @@ HEADERS += \
     Grafo.h \
     NodoGrafo.h \
     NodoAdyacente.h \
-    GrafoCiudades.h \
-    NodoAdyacenteC.h \
-    NodoGrafoC.h \
-    listaCiudades.h \
     Lista.h \
     NodoCola.h \
     Pila.h

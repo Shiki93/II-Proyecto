@@ -28,9 +28,6 @@ NodosArbolNario::NodosArbolNario(int valor){
 
 //Inserta al inicio un elemento
 void ArbolNario::Insertar(int Padre, int HijooHermano, int Valor){
-    qDebug() << "El valor de HijooHermano es: " << HijooHermano;
-    qDebug() << "El valor de Padre es: " << Padre;
-    qDebug() << "El valor de Valor es: " << Valor;
     if(VacioArbol()){
         this->Raiz=new NodosArbolNario (Valor);
     }
@@ -41,9 +38,7 @@ void ArbolNario::Insertar(int Padre, int HijooHermano, int Valor){
         else{
             NodosArbolNario *elementoBusqueda = ElementoB;
             if(HijooHermano == 1){
-                qDebug() << "Entra a un if 1 ";
                 if(elementoBusqueda->hermanoD != NULL){
-                    qDebug() << "Entra a un if 2 ";
                     NodosArbolNario *temp = elementoBusqueda->hermanoD;
                     elementoBusqueda->hermanoD = new NodosArbolNario(Valor);
                     elementoBusqueda->hermanoD->hermanoI = elementoBusqueda;
@@ -53,18 +48,15 @@ void ArbolNario::Insertar(int Padre, int HijooHermano, int Valor){
                     delete temp;
                 }
                 else{
-                    qDebug() << "Entra a un else ";
                     elementoBusqueda->hermanoD=new NodosArbolNario (Valor);
                     elementoBusqueda->hermanoD->hermanoI=elementoBusqueda;
                 }
                 if(ElementoB->padre!=NULL){
-                    qDebug() << "Entra a un if 3 ";
                     elementoBusqueda->hermanoD->padre=ElementoB->padre;
                 }
             }
             else{
                 if(elementoBusqueda->hijo!=NULL){
-                    qDebug() << "Entra a un if 4";
                     elementoBusqueda=elementoBusqueda->hijo;
                     while(elementoBusqueda->hermanoD!=NULL){
                         elementoBusqueda=elementoBusqueda->hermanoD;
@@ -74,7 +66,6 @@ void ArbolNario::Insertar(int Padre, int HijooHermano, int Valor){
                     elementoBusqueda->hermanoD->hermanoI=elementoBusqueda;
                 }
                 else{
-                    qDebug() << "Entra a un else 3";
                     elementoBusqueda->hijo=new NodosArbolNario (Valor);
                     elementoBusqueda->hijo->padre=ElementoB;
                 }
@@ -174,9 +165,10 @@ void ArbolNario::ImprimirRefHermanoaux(NodosArbolNario *raizaux){
 
 //Imprime el arbol por referencia del padre
 void ArbolNario::ImprimirRefPadre(){
-    qDebug() << "Si entre";
-    if(VacioArbol())
+    if(VacioArbol()){
         qDebug()<<"No hay elementos\n";
+        return;
+    }
     else{
         qDebug()<<"Arbol por Ref Padre es: ";
         ImprimirRefPadreaux(Raiz);
@@ -198,8 +190,8 @@ void ArbolNario::ImprimirRefPadreaux(NodosArbolNario *raizaux){
 }
 //Imprime el arbol en preorden
 void ArbolNario::Preorden(int nodo){
-    QFile archivo("Puntos de articulacion"+QString::number(nodo)+".txt");
-    if(archivo.open(QFile::WriteOnly | QFile::Text)){
+    QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/PreOrden.txt");
+    if(!archivo.open(QFile::WriteOnly | QFile::Text)){
         return;
     }
     QTextStream out(&archivo);
@@ -249,8 +241,8 @@ void ArbolNario::Nivelaux(NodosArbolNario *raizaux,int cod){
 
 //Preorden (aux)
 void ArbolNario::Preordenaux(NodosArbolNario *raizaux,int nodo){
-    QFile archivo("Puntos de articulacion"+QString::number(nodo)+".txt");
-    if(archivo.open(QFile::WriteOnly | QFile::Text)){
+    QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/PreOrden.txt");
+    if(!archivo.open(QFile::ReadWrite | QFile::Text)){
         return;
     }
     QTextStream out(&archivo);
@@ -258,11 +250,13 @@ void ArbolNario::Preordenaux(NodosArbolNario *raizaux,int nodo){
         return;
     }
     else{
-        qDebug()<<raizaux->datos<<":"<<endl;
-        out<<raizaux->datos<<":"<<endl;
+        QString x = out.readAll();
+        out << x;
+        qDebug() << raizaux->datos << ":" << endl;
+        out << raizaux->datos << ":" << endl;
         //Imprime las aristas de retroceso
         raizaux->ListaAR.ImprimirAR();
-        qDebug()<<endl;
+        qDebug() << endl;
         out<<endl;
         raizaux->num=va;
         raizaux->bajo=va;
@@ -292,29 +286,45 @@ void ArbolNario::ImprimirAdesdeVertice(NodosArbolNario *raizaux,NodosArbolNario 
 }
 //Recorre el arbol en postOrden para poner los bajos
 void ArbolNario::PostOrdenAR(){
+    QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/PostOrden.txt");
+    if(!archivo.open(QFile::ReadWrite | archivo.Text)){
+        return;
+    }
+    QTextStream out(&archivo);
+    out << "Recorrido PostOrden" << endl;
     PostOrdenARaux(Raiz);
 }
+
 //Recorre el arbol en postOrden para poner los bajos
 void ArbolNario::PostOrdenARaux(NodosArbolNario *raizaux){
-    if(raizaux==NULL){
+    QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/PostOrden.txt");
+    if(!archivo.open(QFile::ReadWrite | archivo.Text)){
+        return;
+    }
+    QTextStream out(&archivo);
+    QString x = out.readAll();
+    out << x << endl;
+    if(raizaux == NULL){
         return;
     }
     else{
+        qDebug() << raizaux->datos << ":" << endl;
+        out << raizaux->datos << ":" << endl;
         PostOrdenARaux(raizaux->hijo);
         PostOrdenARaux(raizaux->hermanoD);
         //Calcula el bajo del nodo
-        int minAR=-1,minHijos=-1,mini;
+        int minAR = -1, minHijos = -1, mini;
         //Obtiene el menor bajo de las aristas de retroceso
-        if(raizaux->ListaAR.PrimerNodo!=NULL){
-            NodosLista *pde=raizaux->ListaAR.PrimerNodo;
+        if(raizaux->ListaAR.PrimerNodo != NULL){
+            NodosLista *pde = raizaux->ListaAR.PrimerNodo;
             EncontrarElem(pde->arr);
-            minAR=ElementoB->bajo;
-            for(pde=raizaux->ListaAR.PrimerNodo->siguiente;pde!=NULL;pde=pde->siguiente){
+            minAR = ElementoB->bajo;
+            for(pde = raizaux->ListaAR.PrimerNodo->siguiente; pde != NULL; pde = pde->siguiente){
                 EncontrarElem(pde->arr);
-                if(ElementoB->bajo<minAR)
-                    minAR=ElementoB->bajo;
+                if(ElementoB->bajo < minAR)
+                    minAR = ElementoB->bajo;
             }
-            pde=NULL;
+            pde = NULL;
             delete pde;
         }
         //Obtiene el menor bajo de los hijos

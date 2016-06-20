@@ -50,7 +50,7 @@ NodolistaC *NodolistaC::obtenerInicio(){
 
 void NodolistaC::BorrarFinal(){
    if (ListaVacia()){
-      cout<<"No hay elementos en la lista:"<<endl;
+      qDebug()<<"No hay elementos en la lista:"<<endl;
    }
    else{
       if (primero->siguiente == NULL) {
@@ -151,7 +151,7 @@ void NodolistaC::MostrarLista(){
             aux = aux->siguiente;
         }
     }
-    cout<<endl;
+    qDebug() << endl;
 
     archivo.flush();
     archivo.close();

@@ -96,8 +96,8 @@ bool Grafo::CargarPaises(){
             InsertaVertices(Cod, Nom);
         }
     }
-    return false;
     encabezados.close();
+    return false;
 }
 
 //Carga las aristas
@@ -188,60 +188,6 @@ void Grafo::CrearGrafo(){
     }
 }
 
-bool Grafo::CrearGrafoPequeno(){
-    int Cod;
-    pnodografo nodo;
-    QString Nom;
-    int codp = 0, codl = 0;
-    int peso;
-    QStringList data;
-    QString line;
-    QFile encabezados("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/VerticesGP.txt");
-    if(!encabezados.open(QFile::ReadOnly | QFile::Text)){
-        qDebug() << "Error";
-        return true;
-    }
-    else{
-        QTextStream in(&encabezados);
-        while(!in.atEnd()){
-            line = in.readLine();
-            data = line.split(";");
-            nodo = BuscarVerticepos(data.at(0).toInt());
-            if(nodo != NULL){
-                Cod = data.at(1).toInt();
-                Nom = data.at(2);
-                nodo->grafoGP.InsertaVertices(Cod,Nom);
-            }
-            else{
-                qDebug() << "Pais no encontrado" << endl;
-            }
-        }
-    }
-    QFile encabezados1("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/AristasGP.txt");
-    if(!encabezados1.open(QFile::ReadOnly | QFile::Text)){
-        qDebug() << "Error";
-        return true;
-    }
-    else{
-        QTextStream in(&encabezados1);
-        QStringList data1;
-        QString line1;
-        while(!in.atEnd()){
-            line1 = in.readLine();
-            data1 = line1.split(";");;
-            nodo = BuscarVerticepos(data1.at(0).toInt());
-            if(nodo!=NULL){
-                codp = data1.at(1).toInt();
-                codl = data1.at(2).toInt();
-                peso = data1.at(3).toInt();
-                nodo->grafoGP.InsertaAristas(codp,codl,peso);
-                nodo->grafoGP.CrearMatrizAdyacencia();
-            }
-        }
-        return false;
-    }
-}
-
 //Crear la matriz de adyacencia
 void Grafo::CrearMatrizAdyacencia(){
     NodoGrafo *p = PrimerNodo;
@@ -279,11 +225,6 @@ void Grafo::ImprimirGrafo(){
                 qDebug() << "--> " << temp->NombrePais << "(" << temp->peso<< ") ";
                 temp=temp->siguiente_ady;
             }
-            qDebug()<<endl;
-            qDebug()<<"\n";
-            qDebug()<<"Ciudades: "<<endl;
-
-            p->grafoGP.ImprimirGrafo();
             qDebug()<<endl;
             p=p->sig_vertice;
         }
@@ -333,7 +274,6 @@ void Grafo::Dijkstra(int inicio,int fin){
     NodolistaC *colaPrioridad = new NodolistaC();
     int pesoTotal = 0;
     QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/Dijsktra.txt");
-
     if(!archivo.open(QFile::WriteOnly | QFile::Text)){
         return;
     }
@@ -721,31 +661,24 @@ void Grafo::Kruskal(){
 //Recorre el grafo en profundidad y genera el arbol n-ario
 
 void Grafo::GenerarArbolNFC(int mac[TamArr]){
-    qDebug() << "Entra a generar arbol";
-    //Resetea el la matriz matVisitas
     int k, i;
     for (k = 0; k < cant; k++){
         matVisitas[k] = 0;
     }
+    int z = 0;
     for (k = 0; k < cant; k++){
-        qDebug() << "Entra al for 2 con k: " << k;
+        qDebug() << "Ronda: " << z;
+        z++;
         i = mac[k];
+        qDebug() << "mac[k]:" << mac[k];
         if(matVisitas[i] == 0){
-            qDebug() << "Entra al if 1";
             BuscarVerticePos(i);
-            qDebug() << "Encontro el vertice";
-            //Inserta al padre
+            qDebug() << "Elemento es: " << this->Elemento->CodVerticeGG;
             if(this->Arbol.Raiz != NULL){
-                qDebug() << "Entra al if 2";
-                qDebug() << "this->Arbol.Raiz->datos: " << this->Arbol.Raiz->datos;
-                qDebug() << "Elemento->CodVerticeGG: " << this->Elemento->NombrePais;
                 this->Arbol.Insertar(this->Arbol.Raiz->datos, 1, this->Elemento->CodVerticeGG);
-                qDebug() << "Inserta los datos al arbol - 1";
             }
             else{
-                qDebug() << "Entra al else 1";
                 this->Arbol.Insertar(0, 1, Elemento->CodVerticeGG);
-                qDebug() << "Inserta los datos al arbol - 2";
             }
             GenerarArbolNaux(Elemento);
         }
@@ -1086,27 +1019,34 @@ void Grafo::GenerarArbolN(int cod)
 }
 
 //Visita un nodo y lo imprime
-void Grafo::GenerarArbolNaux(NodoGrafo *a)
-{
+void Grafo::GenerarArbolNaux(NodoGrafo *a){
     //Visitar
     int i;
-    matVisitas[a->pos]=1;
-    matPosVis[las]=a->pos;
+    matVisitas[a->pos] = 1;
+    matPosVis[las] = a->pos;
     las++;
     NodoAdyacente *t;
-    for (t=a->siguiente_ady; t!=NULL; t=t->siguiente_ady){
-        if (matVisitas[t->pos]==0){
+
+    for (t = a->siguiente_ady; t != NULL; t = t->siguiente_ady){
+
+        if (matVisitas[t->pos] == 0){
             BuscarVerticePos(t->pos);
+            if(Elemento==NULL){
+                qDebug()<<"EL ELEMENTO ES NULL";
+            }
             Arbol.Insertar(a->CodVerticeGG,0,Elemento->CodVerticeGG);
             GenerarArbolNaux(Elemento);
         }
     }
-    t=NULL;
+    t = NULL;
     delete t;
-    for(i=0;i<cant;i++){
+    for(i = 0; i < cant; i++){
         BuscarVerticePos(i);
         if(EsAdyacente(a,Elemento->CodVerticeGG)){
             if(matVisitas[i]==0){
+                if(Elemento==NULL){
+                    qDebug()<<"EL ELEMENTO ES NULL";
+                }
                 Arbol.Insertar(a->CodVerticeGG,0,Elemento->CodVerticeGG);
                 GenerarArbolNaux(Elemento);
             }
@@ -1121,7 +1061,6 @@ void Grafo::GenerarArbolNaux(NodoGrafo *a)
 }
 
 //Retorna si el parametro es adyacente al nodo
-
 bool Grafo::EsAdyacente(NodoGrafo *nodo,int cod)
 {
     NodoAdyacente *p;

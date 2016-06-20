@@ -74,7 +74,6 @@ class ArbolNario{
     void EsPuntoArticulacionaux(NodosArbolNario *raizaux,int nodo);
     //Imprime el arbol en preorden desde un punto de inicio
     void ImprimirAdesdeVertice(NodosArbolNario *raizaux,NodosArbolNario *rai);
-    private:
     //Preorden (aux)
     void Preordenaux(NodosArbolNario *raizaux,int nodo);
     //Imprime el arbol N-Ario por referencias del padre (aux)
@@ -83,4 +82,6 @@ class ArbolNario{
     void ImprimirRefHermanoaux(NodosArbolNario *raizaux);
     //Retorna el nodo donde esta el papa
     void EncontrarElemaux(NodosArbolNario *raizaux,int);
+    void Postorden(int nodo);
+    void PostOrdenaux(NodosArbolNario *raizaux, int nodo);
 };

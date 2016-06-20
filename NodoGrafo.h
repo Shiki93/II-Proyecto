@@ -1,6 +1,5 @@
 #pragma once
 #include "NodoAdyacente.h"
-#include "GrafoCiudades.h"
 #include <QString>
 using namespace std;
 class NodoGrafo{
@@ -19,6 +18,5 @@ class NodoGrafo{
     NodoGrafo();
     //Constructor para paises
     NodoGrafo(int,QString,int);
-    GrafoCiudades grafoGP;
 };
 typedef NodoGrafo *pnodografo;

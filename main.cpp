@@ -7,20 +7,15 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
     Grafo *g = new Grafo();
     g->CrearGrafo();
-    g->CrearGrafoPequeno();
-    //g->ImprimirGrafo();
 
-    //g->Dijkstra(21,100);
-    //qDebug() << "\nSali del Dijkstra";
+    g->GenerarArbolN(11);
 
-    g->Kruskal();
-    g->Prim(21);
-    //g->PuntosArticulacion(21,21);
-    g->GenerarArbolNFC(&g->cant-1);
+    g->Arbol.ImprimirRefPadre();
 
-    if(g->Arbol.VacioArbol()){
-        qDebug() << "Error";
-    }
+    g->Arbol.Preorden(11);
+    g->Arbol.PostOrdenAR();
+
+    g->Arbol.ImprimirRefPadre();
 
 
     return a.exec();
