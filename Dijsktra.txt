@@ -1,0 +1,5 @@
+Nodo resuelto	Nodo no resuelto	Costo minimo	Costo total		UltimaConexion
+Francia
+		Costa Rica(9)
+		Espa�a(6)
+		Panama(8)			9		9		Francia/Costa Rica

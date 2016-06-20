@@ -14,8 +14,6 @@
 #define INF 999
 #define TamArr 100
 
-
-
 class Grafo{
     public:
     //Matriz para corroborar si fue visitado un vertice

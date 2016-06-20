@@ -5,8 +5,6 @@
 #include <QFile>
 #include <QTextStream>
 
-using namespace std;
-
 Nodolista Grafo::ListaNodos(){
     NodoGrafo *nodo = PrimerNodo;
     Nodolista lista;
@@ -179,11 +177,11 @@ void Grafo::InsertaAristas(int CodP,int CodL,int Peso){
 
 //Carga la lista de listas
 void Grafo::CrearGrafo(){
-    bool a,b,c;
-    a = CargarPaises();
-    if(!a){
-        c = CargarAristasGG();
-        if(!c){
+    bool falloAlCargarPaises,falloAlCargarAristas;
+    falloAlCargarPaises = CargarPaises();
+    if(!falloAlCargarPaises){
+        falloAlCargarAristas = CargarAristasGG();
+        if(!falloAlCargarAristas){
             CrearMatrizAdyacencia();
             qDebug()<<"Grafo creado\n";
         }
@@ -191,75 +189,66 @@ void Grafo::CrearGrafo(){
 }
 
 bool Grafo::CrearGrafoPequeno(){
-    char buffer[100]="";
-    char *pch;
     int Cod;
     pnodografo nodo;
     QString Nom;
-    int codp=0,codl=0;
+    int codp = 0, codl = 0;
     int peso;
-    ifstream encabezados ("VerticesGP.txt");
-    if(!encabezados.is_open()){
-        qDebug() << "Error archivo Paises no existe\n";
+    QStringList data;
+    QString line;
+    QFile encabezados("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/VerticesGP.txt");
+    if(!encabezados.open(QFile::ReadOnly | QFile::Text)){
+        qDebug() << "Error";
         return true;
     }
     else{
-        while(!encabezados.eof()){
-            encabezados.getline (buffer,100);
-            if(strcmp(buffer,"")){
-                pch = strtok (buffer,"; ");
-                nodo = BuscarVerticepos(atoi(pch));
-                if(nodo!=NULL){
-                    pch = strtok (NULL,"; ");
-                    Cod = atoi(pch);
-                    pch = strtok (NULL, "; ");
-                    Nom = pch;
-                    nodo->grafoGP.InsertaVertices(Cod,Nom);
-                }
-                else{
-                    qDebug()<<"Pais no encontrado"<<endl;
-                }
-
+        QTextStream in(&encabezados);
+        while(!in.atEnd()){
+            line = in.readLine();
+            data = line.split(";");
+            nodo = BuscarVerticepos(data.at(0).toInt());
+            if(nodo != NULL){
+                Cod = data.at(1).toInt();
+                Nom = data.at(2);
+                nodo->grafoGP.InsertaVertices(Cod,Nom);
+            }
+            else{
+                qDebug() << "Pais no encontrado" << endl;
             }
         }
-    ifstream encabezados1 ("AristasGP.txt");
-    if(!encabezados1.is_open()){
-        qDebug() << "Error archivo Aristas no existe\n";
+    }
+    QFile encabezados1("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/AristasGP.txt");
+    if(!encabezados1.open(QFile::ReadOnly | QFile::Text)){
+        qDebug() << "Error";
         return true;
     }
     else{
-        while(!encabezados1.eof()){
-            encabezados1.getline (buffer,100);
-            if(strcmp(buffer,"")){
-                pch = strtok (buffer,";");
-                nodo = BuscarVerticepos(atoi(pch));
-                if(nodo!=NULL){
-                    pch = strtok (NULL,";");
-                    codp=atoi(pch);
-                    pch = strtok (NULL, ";");
-                    codl=atoi(pch);
-                    pch = strtok (NULL, ";");
-                    peso=atoi(pch);
-                    nodo->grafoGP.InsertaAristas(codp,codl,peso);
-                    nodo->grafoGP.CrearMatrizAdyacencia();
-                }
+        QTextStream in(&encabezados1);
+        QStringList data1;
+        QString line1;
+        while(!in.atEnd()){
+            line1 = in.readLine();
+            data1 = line1.split(";");;
+            nodo = BuscarVerticepos(data1.at(0).toInt());
+            if(nodo!=NULL){
+                codp = data1.at(1).toInt();
+                codl = data1.at(2).toInt();
+                peso = data1.at(3).toInt();
+                nodo->grafoGP.InsertaAristas(codp,codl,peso);
+                nodo->grafoGP.CrearMatrizAdyacencia();
             }
         }
+        return false;
     }
-    pch=NULL;
-    delete pch;
-    return false;
-
-}
 }
 
 //Crear la matriz de adyacencia
 void Grafo::CrearMatrizAdyacencia(){
-    NodoGrafo *p=PrimerNodo;
+    NodoGrafo *p = PrimerNodo;
     NodoAdyacente *temp;
-    if(p!=NULL){
+    if(p != NULL){
         int i;
-        for(i=0;i<cant;i++){
+        for(i = 0; i < cant; i++){
             temp=p->siguiente_ady;
             while(temp!=NULL){
                 mat[i][temp->pos]=1;
@@ -268,8 +257,8 @@ void Grafo::CrearMatrizAdyacencia(){
             p=p->sig_vertice;
         }
     }
-    temp=NULL;
-    p=NULL;
+    temp = NULL;
+    p = NULL;
     delete temp;
     delete p;
 }
@@ -341,88 +330,91 @@ void Grafo::Dijkstra(int inicio,int fin){
     Nodolista camino;
     Nodolista resueltos;
     Nodolista resueltosAux;
-    NodolistaC *colaPrioridad;
+    NodolistaC *colaPrioridad = new NodolistaC();
     int pesoTotal = 0;
-    QFile archivo("Dijsktra.txt");
+    QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/Dijsktra.txt");
+
     if(!archivo.open(QFile::WriteOnly | QFile::Text)){
         return;
     }
-    QTextStream out(&archivo);
-    nodo = BuscarVerticepos(inicio);
-    qDebug() << "Nodo resuelto" << "\t" << "Nodo no resuelto" << "\t" << "Costo minimo" << "\t" << "Costo total" << "\t\t" << "UltimaConexion" << endl;
-    out << "Nodo resuelto" << "\t" << "Nodo no resuelto" << "\t" << "Costo minimo" << "\t" << "Costo total" << "\t\t" << "UltimaConexion" << endl;
-    if(nodo != NULL){
-        //Proceso para el primero
-        qDebug() << nodo->NombrePais << endl;
-        out << nodo->NombrePais << endl;
-        for(t = nodo->siguiente_ady; t != NULL; t = t->siguiente_ady){
-            colaPrioridad->Insertar(nodo, t, t->peso);
-            qDebug()<<"\t\t"<<t->NombrePais<<"("<<t->peso<<")";
-            out<<"\t\t"<<t->NombrePais<<"("<<t->peso<<")";
-            if(t->siguiente_ady==NULL){
-                qDebug()<<"\t\t\t"<<colaPrioridad->obtenerInicio()->llegada->peso;
-                out<<"\t\t\t"<<colaPrioridad->obtenerInicio()->llegada->peso;
-                pesoTotal = pesoTotal + colaPrioridad->obtenerInicio()->llegada->peso;
-                qDebug()<< "\t\t" << colaPrioridad->obtenerInicio()->llegada->peso;
-                out<< "\t\t" << colaPrioridad->obtenerInicio()->llegada->peso;
-                qDebug()<< "\t\t" << colaPrioridad->obtenerInicio()->origen->NombrePais << "/" << colaPrioridad->obtenerInicio()->llegada->NombrePais;
-                out << "\t\t" << colaPrioridad->obtenerInicio()->origen->NombrePais << "/" << colaPrioridad->obtenerInicio()->llegada->NombrePais;
-                camino.InsertarFinal(colaPrioridad->obtenerInicio()->origen, colaPrioridad->obtenerInicio()->llegada,
-                                    colaPrioridad->obtenerInicio()->llegada->peso);
-                resueltos.InsertarFinal(colaPrioridad->obtenerInicio()->origen);
-                resueltos.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
-                resueltosAux.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
-            }
-            qDebug()<<endl;
-            out<<endl;
-        }
-        colaPrioridad->eliminarCoincidencias(colaPrioridad->obtenerInicio()->llegada);
-        qDebug()<<"#########################################################################################################################"<<endl;
-        out<<"#########################################################################################################################"<<endl;
-        out<<endl;
-        qDebug()<<endl;
-        //Proceso para el resto
-        while(resueltos.largoLista()!= tamano()){
-            Nodolista *aux = resueltosAux.primero;
-            resueltos.MostrarLista();
-            while(aux){
-                nodo = BuscarVerticepos(aux->valor->CodVerticeGG);
-                if(nodo!=NULL){
-                    //qDebug()<<nodo->NombrePais<<endl;
-                    for (t=nodo->siguiente_ady; t!=NULL; t=t->siguiente_ady){
-                        colaPrioridad->Insertar(nodo, t, t->peso + pesoTotal);
-                    }
+    else{
+        QTextStream out(&archivo);
+        nodo = BuscarVerticepos(inicio);
+        qDebug() << "Nodo resuelto" << "\t" << "Nodo no resuelto" << "\t" << "Costo minimo" << "\t" << "Costo total" << "\t\t" << "UltimaConexion" << endl;
+        out << "Nodo resuelto" << "\t" << "Nodo no resuelto" << "\t" << "Costo minimo" << "\t" << "Costo total" << "\t\t" << "UltimaConexion" << endl;
+        if(nodo != NULL){
+            //Proceso para el primero
+            qDebug() << nodo->NombrePais << endl;
+            out << nodo->NombrePais << endl;
+            for(t = nodo->siguiente_ady; t != NULL; t = t->siguiente_ady){
+                qDebug() << "El peso de la cola de prioridad es: " << colaPrioridad->peso;
+                colaPrioridad->Insertar(nodo, t, t->peso);
+                qDebug()<<"\t\t"<<t->NombrePais<<"("<<t->peso<<")";
+                out<<"\t\t"<<t->NombrePais<<"("<<t->peso<<")";
+                if(t->siguiente_ady==NULL){
+                    qDebug()<<"\t\t\t"<<colaPrioridad->obtenerInicio()->llegada->peso;
+                    out<<"\t\t\t"<<colaPrioridad->obtenerInicio()->llegada->peso;
+                    pesoTotal = pesoTotal + colaPrioridad->obtenerInicio()->llegada->peso;
+                    qDebug()<< "\t\t" << colaPrioridad->obtenerInicio()->llegada->peso;
+                    out<< "\t\t" << colaPrioridad->obtenerInicio()->llegada->peso;
+                    qDebug()<< "\t\t" << colaPrioridad->obtenerInicio()->origen->NombrePais << "/" << colaPrioridad->obtenerInicio()->llegada->NombrePais;
+                    out << "\t\t" << colaPrioridad->obtenerInicio()->origen->NombrePais << "/" << colaPrioridad->obtenerInicio()->llegada->NombrePais;
+                    camino.InsertarFinal(colaPrioridad->obtenerInicio()->origen, colaPrioridad->obtenerInicio()->llegada,
+                                        colaPrioridad->obtenerInicio()->llegada->peso);
+                    resueltos.InsertarFinal(colaPrioridad->obtenerInicio()->origen);
+                    resueltos.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
+                    resueltosAux.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
                 }
-                aux= aux->siguiente;
+                qDebug()<<endl;
+                out<<endl;
             }
-            colaPrioridad->MostrarLista();
-            //peso minimo
-            qDebug() << "\t\t\t\t\t\t" << colaPrioridad->obtenerInicio()->llegada->peso;
-            out << "\t\t\t\t\t\t" << colaPrioridad->obtenerInicio()->llegada->peso;
-            //peso total
-            qDebug() << "\t\t" << colaPrioridad->obtenerInicio()->peso;
-            out << "\t\t" << colaPrioridad->obtenerInicio()->peso;
-            pesoTotal = colaPrioridad->obtenerInicio()->peso;
-            //ultima conexion
-            qDebug() << "\t\t" << colaPrioridad->obtenerInicio()->origen->NombrePais << "/" << colaPrioridad->obtenerInicio()->llegada->NombrePais << endl;
-            out << "\t\t" << colaPrioridad->obtenerInicio()->origen->NombrePais << "/" << colaPrioridad->obtenerInicio()->llegada->NombrePais << endl;
-            //para saber camino despues
-            camino.InsertarFinal(colaPrioridad->obtenerInicio()->origen, colaPrioridad->obtenerInicio()->llegada, colaPrioridad->obtenerInicio()->peso);
-            resueltos.InsertarFinal(colaPrioridad->obtenerInicio()->origen);
-            resueltos.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
-            resueltosAux.BorrarFinal();
-            resueltosAux.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
-
             colaPrioridad->eliminarCoincidencias(colaPrioridad->obtenerInicio()->llegada);
             qDebug()<<"#########################################################################################################################"<<endl;
             out<<"#########################################################################################################################"<<endl;
             out<<endl;
-        }
-        camino.MostrarCamino(BuscarVerticepos(fin));
+            qDebug()<<endl;
+            //Proceso para el resto
+            while(resueltos.largoLista()!= tamano()){
+                Nodolista *aux = resueltosAux.primero;
+                resueltos.MostrarLista();
+                while(aux){
+                    nodo = BuscarVerticepos(aux->valor->CodVerticeGG);
+                    if(nodo!=NULL){
+                        //qDebug()<<nodo->NombrePais<<endl;
+                        for (t=nodo->siguiente_ady; t!=NULL; t=t->siguiente_ady){
+                            colaPrioridad->Insertar(nodo, t, t->peso + pesoTotal);
+                        }
+                    }
+                    aux= aux->siguiente;
+                }
+                colaPrioridad->MostrarLista();
+                //peso minimo
+                qDebug() << "\t\t\t\t\t\t" << colaPrioridad->obtenerInicio()->llegada->peso;
+                out << "\t\t\t\t\t\t" << colaPrioridad->obtenerInicio()->llegada->peso;
+                //peso total
+                qDebug() << "\t\t" << colaPrioridad->obtenerInicio()->peso;
+                out << "\t\t" << colaPrioridad->obtenerInicio()->peso;
+                pesoTotal = colaPrioridad->obtenerInicio()->peso;
+                //ultima conexion
+                qDebug() << "\t\t" << colaPrioridad->obtenerInicio()->origen->NombrePais << "/" << colaPrioridad->obtenerInicio()->llegada->NombrePais << endl;
+                out << "\t\t" << colaPrioridad->obtenerInicio()->origen->NombrePais << "/" << colaPrioridad->obtenerInicio()->llegada->NombrePais << endl;
+                //para saber camino despues
+                camino.InsertarFinal(colaPrioridad->obtenerInicio()->origen, colaPrioridad->obtenerInicio()->llegada, colaPrioridad->obtenerInicio()->peso);
+                resueltos.InsertarFinal(colaPrioridad->obtenerInicio()->origen);
+                resueltos.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
+                resueltosAux.BorrarFinal();
+                resueltosAux.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
 
+                colaPrioridad->eliminarCoincidencias(colaPrioridad->obtenerInicio()->llegada);
+                qDebug()<<"#########################################################################################################################"<<endl;
+                out<<"#########################################################################################################################"<<endl;
+                out<<endl;
+            }
+            camino.MostrarCamino(BuscarVerticepos(fin));
+        }
+        archivo.flush();
+        archivo.close();
     }
-    archivo.flush();
-    archivo.close();
 }
 
 //Recorre el grafo en profundidad
@@ -550,7 +542,7 @@ void Grafo::RecorridoAnchura(int cod){
 
 //Algoritmo de Prim
 void Grafo::Prim(int cod){
-    QFile archivo("Prim.txt");
+    QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/Prim.txt");
     if(!archivo.open(QFile::WriteOnly | QFile::Text)){
         return;
     }
@@ -647,23 +639,24 @@ void Grafo::Prim(int cod){
 //Algoritmo de kruskal
 
 void Grafo::Kruskal(){
-    QFile archivo("kruskal.txt");
+    QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/kruskal.txt");
     if(!archivo.open(QFile::WriteOnly | QFile::Text)){
+        qDebug() << "Error en el kruskal";
         return;
     }
     QTextStream out(&archivo);
     if(!VacioGrafo()){
-        int i,j,ct;
+        int i, j, ct;
         //Ordena las aristas en orden ascendente y se las sede a listaOr
         ListaSimple listaOr = OrdenarAristas();
         NodosLista *imp;
-        qDebug()<<"Algoritmo de Kruskal:"<<endl;
-        out<<"Algoritmo de Kruskal:"<<endl;
-        if(listaOr.PrimerNodo!=NULL){
+        qDebug()<<"Algoritmo de Kruskal:" << endl;
+        out << "Algoritmo de Kruskal: " << endl;
+        if(listaOr.PrimerNodo != NULL){
             //imprime la primer arista (menor)
-            qDebug()<<"Aristas seleccionadas: "<<endl;
-            out<<"Aristas seleccionadas: "<<endl;
-            imp=listaOr.PrimerNodo;
+            qDebug() << "Aristas seleccionadas: " << endl;
+            out << "Aristas seleccionadas: " << endl;
+            imp = listaOr.PrimerNodo;
             BuscarVerticePos(imp->partida);
             qDebug()<<Elemento->NombrePais<<" -> ";
             out<<Elemento->NombrePais<<" -> ";
@@ -708,8 +701,10 @@ void Grafo::Kruskal(){
     }
     else
         qDebug()<<"Grafo Vacio\n";
-}
 
+    archivo.flush();
+    archivo.close();
+}
 
 //Recorre el grafo en profundidad y genera el arbol n-ario
 
@@ -760,10 +755,6 @@ void Grafo::PuntosArticulacion(int cod,int nodo)
     else
         qDebug()<<"Grafo Vacio\n";
 }
-
-
-
-
 
 //Crear la matriz de valorada
 
@@ -836,7 +827,7 @@ void Grafo::EncontrarNodo(int val)
     else{
         bool enc=false;
         NodoGrafo *p=PrimerNodo;
-        while(p!=NULL & enc==false){
+        while((p!=NULL) & (enc==false)){
             if(p->CodVerticeGG==val){
                 enc=true;
             }
@@ -875,28 +866,24 @@ void Grafo::BuscarVerticePos(int vas)
 
 //Encuentra al nodo de origen y retorna dicho nodo
 
-pnodografo Grafo::BuscarVerticepos(int vas)
-{
+pnodografo Grafo::BuscarVerticepos(int vas){
     //pnodografo h;
     if(VacioGrafo()){
         return NULL;
     }
     else{
-        bool enc=false;
-        NodoGrafo *p=PrimerNodo;
-        while(p!=NULL & enc==false){
-            if(p->CodVerticeGG == vas){
-                return p;
-                //enc=true;
+        NodoGrafo *primer_Nodo=PrimerNodo;
+        while(primer_Nodo!=NULL){
+            if(primer_Nodo->CodVerticeGG == vas){
+                return primer_Nodo;
             }
             else{
-                p=p->sig_vertice;
+                primer_Nodo=primer_Nodo->sig_vertice;
             }
         }
         return NULL;
     }
 }
-
 
 //Corrobora si genera ciclos
 
@@ -1115,8 +1102,6 @@ void Grafo::GenerarArbolNaux(NodoGrafo *a)
         }
     }
 }
-
-
 
 //Retorna si el parametro es adyacente al nodo
 

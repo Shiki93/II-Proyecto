@@ -1,0 +1,12 @@
+150;12;San Jose
+96;12;San Jose
+96;13;Heredia
+96;200;Limon
+96;24;Puntarenas
+96;14;Cartago
+96;150;Guanacaste
+96;16;Alajuela
+96;16;Turrialba
+21;40;Paris
+21;30;Brucelas
+21;16;Nameless

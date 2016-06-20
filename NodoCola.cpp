@@ -14,31 +14,41 @@ NodolistaC::~NodolistaC(){
    actual = NULL;
 }
 
-void NodolistaC::Insertar(NodoGrafo *ori, NodoAdyacente *ll,int peso){
+void NodolistaC::Insertar(NodoGrafo *ori, NodoAdyacente *ll, int pPeso){
    bool entro=false;
    if(ListaVacia()){
+      qDebug()<<"entro a lista vacia";
       primero = new NodolistaC(ori, ll,peso);
    }
    else{
-       if(peso < this->peso){
-           primero = new NodolistaC(ori,ll,peso,primero);
+       if(pPeso < this->peso){
+           qDebug() << "El peso A es: " << pPeso;
+           qDebug() << "El peso B es: " << this->peso;
+           qDebug()<<"entro a peso menor";
+           primero = new NodolistaC(ori, ll, peso, primero);
        }
        else{
-           NodolistaC *aux = primero;
+           qDebug() << "Entro a else 2";
+           NodolistaC *aux = this->primero;
            while (aux->siguiente!=NULL){
+               qDebug()<<"entro al while";
                if (aux->siguiente->peso >= peso){
                    NodolistaC *temp = new NodolistaC(ori,ll,peso);
                    temp->siguiente = aux->siguiente;
                    aux->siguiente = temp;
-                   entro = 1;
+                   entro = true;
                    break;
                }
-                aux = aux->siguiente;
-            }
-           if(!entro)
-            aux->siguiente = new NodolistaC(ori,ll,peso);
+               aux = aux->siguiente;
+           }
+
+           if(!entro){
+                qDebug()<<"entro a un not enter";
+                aux->siguiente = new NodolistaC(ori,ll,peso);
+           }
        }
    }
+
 }
 
 NodolistaC *NodolistaC::obtenerInicio(){

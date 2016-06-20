@@ -1,5 +1,4 @@
 #include "Pila.h"
-#include <QDebug>
 
 using namespace std;
 //Inserta al final de la pila un elemento
@@ -9,10 +8,11 @@ void Pila::Push(int Elem){
     else
         UltimoNodo=(*UltimoNodo).siguiente=new NodosPila(Elem);
 }
+
 //Elimina el ultimo elemento
 void Pila::Pop(){
     if(VaciaPila())
-        qDebug() <<"No hay elementos\n";
+        cout <<"No hay elementos\n";
     else{
         if (PrimerNodo == UltimoNodo)
             PrimerNodo=UltimoNodo=NULL;
@@ -29,6 +29,7 @@ void Pila::Pop(){
         }
     }
 }
+
 //Retorna el tope de la pila
 int Pila::Tope(){
     if (UltimoNodo==NULL)
@@ -36,15 +37,16 @@ int Pila::Tope(){
     else
         return (*UltimoNodo).datos;
 }
+
 //Imprime la lista
 void Pila::Imprimir(){
     Pila temp;
     if(VaciaPila()){
-        qDebug()<<"Pila Vacia\n";
+        cout<<"Pila Vacia\n";
     }
     else{
         while(!VaciaPila()){
-            qDebug()<<Tope()<<" ";
+            cout<<Tope()<<" ";
             temp.Push(Tope());
             Pop();
         }
@@ -52,7 +54,6 @@ void Pila::Imprimir(){
             Push(temp.Tope());
             temp.Pop();
         }
-        qDebug()<<"\n";
+        cout<<"\n";
     }
 }
-

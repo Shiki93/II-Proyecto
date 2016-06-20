@@ -1,35 +1,33 @@
-#pragma once
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
+#include <QDebug>
 #include "NodoAdyacente.h"
 #include "NodoGrafo.h"
-
-using namespace std;
 
 class NodolistaC{
     public:
         NodolistaC(){
-            primero = actual = NULL;
+            this->primero=NULL;
+            this->actual = NULL;
         }
 
         NodolistaC(NodoGrafo *ori, NodoAdyacente *ll,int peso){
-            origen = ori;
-            llegada = ll;
+            this->origen = ori;
+            this->llegada = ll;
             this->peso = peso;
-            siguiente = NULL;
+            this->siguiente = new NodolistaC();
         }
 
         NodolistaC(NodoGrafo *ori, NodoAdyacente *ll,int peso,  NodolistaC * signodo){
-            origen = ori;
-            llegada = ll;
+            this->origen = ori;
+            this->llegada = ll;
             this->peso = peso;
-            siguiente = signodo;
+            this->siguiente = signodo;
         }
 
         ~NodolistaC();
-        bool ListaVacia(){ return primero == NULL; }
+        bool ListaVacia(){
+            bool resul=this->primero == NULL;
+            return resul;
+        }
         void Insertar(NodoGrafo *ori, NodoAdyacente *ll,int peso);
         void Insertarpru(int peso);
         void BorrarFinal();
@@ -43,9 +41,9 @@ class NodolistaC{
 
         NodoAdyacente *llegada;
         NodoGrafo *origen;
-        int peso;
+        int peso = 0;
         //ayuda
-        bool final;
+        bool final = false;
 
         NodolistaC *siguiente;
         NodolistaC *primero;

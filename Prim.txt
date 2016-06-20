@@ -1,0 +1,11 @@
+Algoritmo de Prim: 
+Aristas seleccionadas: 
+Espa�a -> Francia
+Costa Rica -> Espa�a
+Ecuador -> Costa Rica
+Panama -> Costa Rica
+
+Pesos: 
+{ 6 3 1 2 }
+
+El costo es: 12
