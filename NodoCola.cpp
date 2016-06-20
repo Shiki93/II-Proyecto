@@ -17,21 +17,15 @@ NodolistaC::~NodolistaC(){
 void NodolistaC::Insertar(NodoGrafo *ori, NodoAdyacente *ll, int pPeso){
    bool entro=false;
    if(ListaVacia()){
-      qDebug()<<"entro a lista vacia";
       primero = new NodolistaC(ori, ll,peso);
    }
    else{
        if(pPeso < this->peso){
-           qDebug() << "El peso A es: " << pPeso;
-           qDebug() << "El peso B es: " << this->peso;
-           qDebug()<<"entro a peso menor";
            primero = new NodolistaC(ori, ll, peso, primero);
        }
        else{
-           qDebug() << "Entro a else 2";
            NodolistaC *aux = this->primero;
            while (aux->siguiente!=NULL){
-               qDebug()<<"entro al while";
                if (aux->siguiente->peso >= peso){
                    NodolistaC *temp = new NodolistaC(ori,ll,peso);
                    temp->siguiente = aux->siguiente;
@@ -43,7 +37,6 @@ void NodolistaC::Insertar(NodoGrafo *ori, NodoAdyacente *ll, int pPeso){
            }
 
            if(!entro){
-                qDebug()<<"entro a un not enter";
                 aux->siguiente = new NodolistaC(ori,ll,peso);
            }
        }
@@ -97,18 +90,19 @@ void NodolistaC::eliminarCoincidencias(NodoAdyacente *adyacente){
 
 void NodolistaC:: borrarPosicion(int pos){
      if(ListaVacia()){
-        cout << "Lista vacia" <<endl;
+         qDebug() << "Lista vacia" << endl;
     }
     else{
-        if((pos>largoLista())||(pos<0)){
-            cout << "Error en posicion" << endl;
-        }else{
-            if(pos==0){
-            primero=primero->siguiente;
-            }
-            else{
-                int cont=1;
-                NodolistaC *aux=  primero;
+         if((pos > largoLista()) || (pos < 0)){
+             qDebug() << "Error en posicion" << endl;
+         }
+         else{
+             if(pos==0){
+                 primero = primero->siguiente;
+             }
+             else{
+                 int cont = 1;
+                 NodolistaC *aux=  primero;
                 while(cont<pos){
                     aux=aux->siguiente;
                     cont++;
@@ -126,40 +120,39 @@ void NodolistaC:: borrarPosicion(int pos){
 }
 
 int NodolistaC::largoLista(){
-    int cont=0;
-
-    NodolistaC *aux;
-    aux = primero;
+    int cont = 0;
+    NodolistaC *aux = this->primero;
     if(ListaVacia()){
         return cont;
-    }else{
-        while(aux!=NULL){
-        aux=aux->siguiente;
-        cont++;
     }
-    return cont;
+    else{
+        while(aux != NULL){
+            cont++;
+            aux = aux->siguiente;
+        }
+        return cont;
     }
-
 }
 
 void NodolistaC::MostrarLista(){
-    QFile archivo("Dijsktra.txt");
-    if(!archivo.open(QFile::WriteOnly | QFile::Text)){
+    QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/Dijsktra.txt");
+    if(!archivo.open(QFile::ReadWrite | QFile::Text)){
         return;
     }
     QTextStream out(&archivo);
+    QString a = out.readAll();
+    qDebug() << "\nAqui Inicio A\n";
+    qDebug() << a;
     NodolistaC *aux = primero;
     if(!ListaVacia()){
-        while(aux){
-            if(aux!=NULL){
-                qDebug() << "\t\t" << aux->llegada->NombrePais << "(" << aux->peso << ")" << endl;
-                out << "\t\t"<<aux->llegada->NombrePais<<"("<<aux->peso<<")"<<endl;
-                aux = aux->siguiente;
-            }
+        while(aux != NULL){
+            qDebug() << "\t\t" << aux->llegada->NombrePais << "(" << aux->peso << ")" << endl;
+            out << "\t\t"<<aux->llegada->NombrePais<<"("<<aux->peso<<")"<<endl;
+            aux = aux->siguiente;
         }
-   }
-   cout<<endl;
+    }
+    cout<<endl;
 
-   archivo.flush();
-   archivo.close();
+    archivo.flush();
+    archivo.close();
 }

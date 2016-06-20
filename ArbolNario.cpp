@@ -28,49 +28,59 @@ NodosArbolNario::NodosArbolNario(int valor){
 
 //Inserta al inicio un elemento
 void ArbolNario::Insertar(int Padre, int HijooHermano, int Valor){
-    if(VacioArbol())
-        Raiz=new NodosArbolNario (Valor);
+    qDebug() << "El valor de HijooHermano es: " << HijooHermano;
+    qDebug() << "El valor de Padre es: " << Padre;
+    qDebug() << "El valor de Valor es: " << Valor;
+    if(VacioArbol()){
+        this->Raiz=new NodosArbolNario (Valor);
+    }
     else{
         EncontrarElem(Padre);
-        if(ElementoB==NULL)
-            qDebug()<<"No se encontro el elemento";
+        if(ElementoB == NULL){
+        }
         else{
-            NodosArbolNario *p=ElementoB;
-            if(HijooHermano==1){
-                if(p->hermanoD!=NULL){
-                    NodosArbolNario *temp=p->hermanoD;
-                    p->hermanoD=new NodosArbolNario (Valor);
-                    p->hermanoD->hermanoI=p;
-                    p->hermanoD->hermanoD=temp;
-                    temp->hermanoI=p->hermanoD;
-                    temp=NULL;
+            NodosArbolNario *elementoBusqueda = ElementoB;
+            if(HijooHermano == 1){
+                qDebug() << "Entra a un if 1 ";
+                if(elementoBusqueda->hermanoD != NULL){
+                    qDebug() << "Entra a un if 2 ";
+                    NodosArbolNario *temp = elementoBusqueda->hermanoD;
+                    elementoBusqueda->hermanoD = new NodosArbolNario(Valor);
+                    elementoBusqueda->hermanoD->hermanoI = elementoBusqueda;
+                    elementoBusqueda->hermanoD->hermanoD = temp;
+                    temp->hermanoI = elementoBusqueda->hermanoD;
+                    temp = NULL;
                     delete temp;
                 }
                 else{
-                    p->hermanoD=new NodosArbolNario (Valor);
-                    p->hermanoD->hermanoI=p;
+                    qDebug() << "Entra a un else ";
+                    elementoBusqueda->hermanoD=new NodosArbolNario (Valor);
+                    elementoBusqueda->hermanoD->hermanoI=elementoBusqueda;
                 }
                 if(ElementoB->padre!=NULL){
-                    p->hermanoD->padre=ElementoB->padre;
+                    qDebug() << "Entra a un if 3 ";
+                    elementoBusqueda->hermanoD->padre=ElementoB->padre;
                 }
             }
             else{
-                if(p->hijo!=NULL){
-                    p=p->hijo;
-                    while(p->hermanoD!=NULL){
-                        p=p->hermanoD;
+                if(elementoBusqueda->hijo!=NULL){
+                    qDebug() << "Entra a un if 4";
+                    elementoBusqueda=elementoBusqueda->hijo;
+                    while(elementoBusqueda->hermanoD!=NULL){
+                        elementoBusqueda=elementoBusqueda->hermanoD;
                     }
-                    p->hermanoD=new NodosArbolNario (Valor);
-                    p->hermanoD->padre=ElementoB;
-                    p->hermanoD->hermanoI=p;
+                    elementoBusqueda->hermanoD=new NodosArbolNario (Valor);
+                    elementoBusqueda->hermanoD->padre=ElementoB;
+                    elementoBusqueda->hermanoD->hermanoI=elementoBusqueda;
                 }
                 else{
-                    p->hijo=new NodosArbolNario (Valor);
-                    p->hijo->padre=ElementoB;
+                    qDebug() << "Entra a un else 3";
+                    elementoBusqueda->hijo=new NodosArbolNario (Valor);
+                    elementoBusqueda->hijo->padre=ElementoB;
                 }
             }
-            p=NULL;
-            delete p;
+            elementoBusqueda=NULL;
+            delete elementoBusqueda;
         }
         ElementoB=NULL;
         delete ElementoB;
@@ -164,6 +174,7 @@ void ArbolNario::ImprimirRefHermanoaux(NodosArbolNario *raizaux){
 
 //Imprime el arbol por referencia del padre
 void ArbolNario::ImprimirRefPadre(){
+    qDebug() << "Si entre";
     if(VacioArbol())
         qDebug()<<"No hay elementos\n";
     else{

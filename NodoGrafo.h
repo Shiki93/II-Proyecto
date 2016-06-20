@@ -6,7 +6,7 @@ using namespace std;
 class NodoGrafo{
     public:
 
-    NodoGrafo *sig_vertice;
+    NodoGrafo *sig_vertice = NULL;
     NodoAdyacente *siguiente_ady;
     int Tipo;
     //grafopequeño

@@ -116,8 +116,8 @@ int Nodolista::largoLista(){
 
 //Muestra elcontenido de la lista enlazada
 void Nodolista::MostrarLista(){
-   QFile archivo("Dijsktra.txt");
-   if(!archivo.open(QFile::WriteOnly | QFile::Text)){
+   QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/Dijsktra.txt");
+   if(!archivo.open(QFile::ReadWrite | QFile::Text)){
        return;
    }
    QTextStream out(&archivo);
@@ -136,8 +136,8 @@ void Nodolista::MostrarLista(){
 void Nodolista::MostrarCamino(NodoGrafo *val){
    Nodolista *aux = primero;
    Nodolista *aux2 = primero;
-   QFile archivo("Dijsktra.txt");
-   if(!archivo.open(QFile::WriteOnly | QFile::Text)){
+   QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/Dijsktra.txt");
+   if(!archivo.open(QFile::ReadWrite | QFile::Text)){
        return;
    }
    QTextStream out(&archivo);

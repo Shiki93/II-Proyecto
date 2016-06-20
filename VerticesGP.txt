@@ -7,6 +7,3 @@
 96;150;Guanacaste
 96;16;Alajuela
 96;16;Turrialba
-21;40;Paris
-21;30;Brucelas
-21;16;Nameless

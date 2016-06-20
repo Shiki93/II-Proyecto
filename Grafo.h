@@ -81,7 +81,6 @@ class Grafo{
     //Obtiene los puntos de articulacion de un grafo
     void PuntosArticulacion(int cod,int nodo);
     int tamano();
-    private:
 
     //Ordena las aristas del grafo y retorna la lista de ellas
     ListaSimple OrdenarAristas();

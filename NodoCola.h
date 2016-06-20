@@ -5,8 +5,9 @@
 class NodolistaC{
     public:
         NodolistaC(){
-            this->primero=NULL;
+            this->primero = NULL;
             this->actual = NULL;
+            this->siguiente = NULL;
         }
 
         NodolistaC(NodoGrafo *ori, NodoAdyacente *ll,int peso){
@@ -25,7 +26,7 @@ class NodolistaC{
 
         ~NodolistaC();
         bool ListaVacia(){
-            bool resul=this->primero == NULL;
+            bool resul = this->primero == NULL;
             return resul;
         }
         void Insertar(NodoGrafo *ori, NodoAdyacente *ll,int peso);
@@ -45,9 +46,9 @@ class NodolistaC{
         //ayuda
         bool final = false;
 
-        NodolistaC *siguiente;
-        NodolistaC *primero;
-        NodolistaC *actual;
+        NodolistaC *siguiente = NULL;
+        NodolistaC *primero = NULL;
+        NodolistaC *actual = NULL;
 
 };
 

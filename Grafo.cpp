@@ -122,16 +122,16 @@ bool Grafo::CargarAristasGG(){
             InsertaAristas(idPartida, idLlegada, peso);
         }
     }
-    return false;
     encabezados.close();
+    return false;
 }
 
 //Inserta un elemento en el grafo al inicio (para pais)
 void Grafo::InsertaVertices(int cod,QString nombre){
     if(VacioGrafo())
-        PrimerNodo=UltimoNodo=new NodoGrafo (cod,nombre,cant);
+        PrimerNodo = UltimoNodo = new NodoGrafo(cod, nombre, cant);
     else{
-        UltimoNodo=UltimoNodo->sig_vertice=new NodoGrafo(cod,nombre,cant);
+        UltimoNodo = UltimoNodo->sig_vertice = new NodoGrafo(cod, nombre, cant);
     }
     cant++;
 }
@@ -142,10 +142,10 @@ void Grafo::InsertaAristas(int CodP,int CodL,int Peso){
         qDebug()<<"No hay Vertices\n";
     else{
         EncontrarNodo(CodP);
-        NodoGrafo *p=Elemento;
+        NodoGrafo *p=this->Elemento;
         if(p!=NULL){
             EncontrarNodo(CodL);
-            NodoGrafo *j=Elemento;
+            NodoGrafo *j=this->Elemento;
             if(j!=NULL){
                 if(p->siguiente_ady==NULL){
                     p->siguiente_ady=new NodoAdyacente(CodL,Peso,j->pos,j->NombrePais);
@@ -347,11 +347,10 @@ void Grafo::Dijkstra(int inicio,int fin){
             qDebug() << nodo->NombrePais << endl;
             out << nodo->NombrePais << endl;
             for(t = nodo->siguiente_ady; t != NULL; t = t->siguiente_ady){
-                qDebug() << "El peso de la cola de prioridad es: " << colaPrioridad->peso;
                 colaPrioridad->Insertar(nodo, t, t->peso);
-                qDebug()<<"\t\t"<<t->NombrePais<<"("<<t->peso<<")";
-                out<<"\t\t"<<t->NombrePais<<"("<<t->peso<<")";
-                if(t->siguiente_ady==NULL){
+                qDebug() << "\t\t" << t->NombrePais << "(" << t->peso << ")";
+                out << "\t\t" << t->NombrePais << "(" << t->peso << ")";
+                if(t->siguiente_ady == NULL){
                     qDebug()<<"\t\t\t"<<colaPrioridad->obtenerInicio()->llegada->peso;
                     out<<"\t\t\t"<<colaPrioridad->obtenerInicio()->llegada->peso;
                     pesoTotal = pesoTotal + colaPrioridad->obtenerInicio()->llegada->peso;
@@ -365,29 +364,39 @@ void Grafo::Dijkstra(int inicio,int fin){
                     resueltos.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
                     resueltosAux.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
                 }
-                qDebug()<<endl;
+                qDebug() << endl;
                 out<<endl;
             }
             colaPrioridad->eliminarCoincidencias(colaPrioridad->obtenerInicio()->llegada);
             qDebug()<<"#########################################################################################################################"<<endl;
-            out<<"#########################################################################################################################"<<endl;
-            out<<endl;
+            out << "#########################################################################################################################"<<endl;
+            out << endl;
             qDebug()<<endl;
             //Proceso para el resto
             while(resueltos.largoLista()!= tamano()){
+                //qDebug() << "Entro al While";
                 Nodolista *aux = resueltosAux.primero;
                 resueltos.MostrarLista();
+                //qDebug() << "Paso de mostrar";
                 while(aux){
+                    //qDebug() << "Entro al while 2";
                     nodo = BuscarVerticepos(aux->valor->CodVerticeGG);
-                    if(nodo!=NULL){
+                    //qDebug() << "Cargo el nodo";
+                    if(nodo != NULL){
+                        //qDebug() << "Entro al if";
                         //qDebug()<<nodo->NombrePais<<endl;
-                        for (t=nodo->siguiente_ady; t!=NULL; t=t->siguiente_ady){
+                        for (t = nodo->siguiente_ady; t != NULL; t=t->siguiente_ady){
+                            //qDebug() << "Entro al for";
                             colaPrioridad->Insertar(nodo, t, t->peso + pesoTotal);
                         }
+                        //qDebug() << "Salgo del for";
                     }
-                    aux= aux->siguiente;
+                    aux = aux->siguiente;
+                    //qDebug() << "Avanzo en el while 1";
                 }
+
                 colaPrioridad->MostrarLista();
+                qDebug() << "Paso de mostrar 2";
                 //peso minimo
                 qDebug() << "\t\t\t\t\t\t" << colaPrioridad->obtenerInicio()->llegada->peso;
                 out << "\t\t\t\t\t\t" << colaPrioridad->obtenerInicio()->llegada->peso;
@@ -410,7 +419,9 @@ void Grafo::Dijkstra(int inicio,int fin){
                 out<<"#########################################################################################################################"<<endl;
                 out<<endl;
             }
+            qDebug() << "Lo que sea";
             camino.MostrarCamino(BuscarVerticepos(fin));
+            qDebug() << "FIN!";
         }
         archivo.flush();
         archivo.close();
@@ -424,7 +435,7 @@ void Grafo::RecorridoProfundidad(int cod){
         NodoAdyacente *t;
         Pila pil;
 
-        QFile archivo("Produndidad.txt");
+        QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/Profundidad.txt");
         if(!archivo.open(QFile::WriteOnly | QFile::Text)){
             return;
         }
@@ -485,7 +496,7 @@ void Grafo::RecorridoAnchura(int cod){
         NodoGrafo *a;
         NodoAdyacente *t;
         Cola col;
-        QFile archivo("Anchura.txt");
+        QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/Anchura.txt");
         if(!archivo.open(QFile::WriteOnly | QFile::Text)){
             return;
         }
@@ -634,7 +645,8 @@ void Grafo::Prim(int cod){
         qDebug()<<"Grafo Vacio\n";
     }
     archivo.flush();
-    archivo.close();}
+    archivo.close();
+}
 
 //Algoritmo de kruskal
 
@@ -708,34 +720,49 @@ void Grafo::Kruskal(){
 
 //Recorre el grafo en profundidad y genera el arbol n-ario
 
-void Grafo::GenerarArbolNFC(int mac[TamArr])
-{
+void Grafo::GenerarArbolNFC(int mac[TamArr]){
+    qDebug() << "Entra a generar arbol";
     //Resetea el la matriz matVisitas
-    int k,i;
-    for (k=0; k<cant; k++)
-        matVisitas[k]=0;
-    for (k=0; k<cant; k++){
-        i=mac[k];
-        if (matVisitas[i]==0){
+    int k, i;
+    for (k = 0; k < cant; k++){
+        matVisitas[k] = 0;
+    }
+    for (k = 0; k < cant; k++){
+        qDebug() << "Entra al for 2 con k: " << k;
+        i = mac[k];
+        if(matVisitas[i] == 0){
+            qDebug() << "Entra al if 1";
             BuscarVerticePos(i);
+            qDebug() << "Encontro el vertice";
             //Inserta al padre
-            if(Arbol.Raiz!=NULL)
-                Arbol.Insertar(Arbol.Raiz->datos,1,Elemento->CodVerticeGG);
-            else
-                Arbol.Insertar(0,1,Elemento->CodVerticeGG);
+            if(this->Arbol.Raiz != NULL){
+                qDebug() << "Entra al if 2";
+                qDebug() << "this->Arbol.Raiz->datos: " << this->Arbol.Raiz->datos;
+                qDebug() << "Elemento->CodVerticeGG: " << this->Elemento->NombrePais;
+                this->Arbol.Insertar(this->Arbol.Raiz->datos, 1, this->Elemento->CodVerticeGG);
+                qDebug() << "Inserta los datos al arbol - 1";
+            }
+            else{
+                qDebug() << "Entra al else 1";
+                this->Arbol.Insertar(0, 1, Elemento->CodVerticeGG);
+                qDebug() << "Inserta los datos al arbol - 2";
+            }
             GenerarArbolNaux(Elemento);
         }
     }
 }
 
 //Obtiene los puntos de articulacion de un grafo
-
-void Grafo::PuntosArticulacion(int cod,int nodo)
-{
-    ofstream archivo("Puntos de articulacion.txt",ios::app);
+void Grafo::PuntosArticulacion(int cod,int nodo){
+    QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/Puntos de articulacion.txt");
+    if(!archivo.open(QFile::WriteOnly | QFile::Text)){
+        qDebug() << "Error en el archivo Puntos de Articulacion";
+        return;
+    }
+    QTextStream out(&archivo);
     if(!VacioGrafo()){
         //Crea el grafo no dirigido
-        Grafo gnd=CreaGrafoNoDirigido();
+        Grafo gnd = CreaGrafoNoDirigido();
         //Crea el arbol-nario
         ArbolNario nuevoArbol;
         delete gnd.Arbol.Raiz;
@@ -744,45 +771,42 @@ void Grafo::PuntosArticulacion(int cod,int nodo)
         gnd.GenerarArbolN(cod);
         //Imprime el Arbol y va poniendo los nums
         gnd.Arbol.Preorden(nodo);
-        archivo<<endl;
-        qDebug()<<endl;
+        out << endl;
+        qDebug() << endl;
         //Pone los bajos de cada vertice
         gnd.Arbol.PostOrdenAR();
         //Compara bajo(hijo)>=Num(padre) para cada vertice exceptuando la raiz
         gnd.Arbol.EsPuntoArticulacion(nodo);
-
     }
     else
         qDebug()<<"Grafo Vacio\n";
 }
 
 //Crear la matriz de valorada
-
-void Grafo::CrearMatrizValorada()
-{
-    NodoGrafo *p=PrimerNodo;
+void Grafo::CrearMatrizValorada(){
+    NodoGrafo *p = PrimerNodo;
     NodoAdyacente *temp;
     //Inicializa cada valor en Infinito
-    int h,g;
-    for(h=0;h<cant;h++){
-        for(g=0;g<cant;g++){
-            matTemporal[h][g]=INF;
+    int h, g;
+    for(h = 0; h < cant; h++){
+        for(g = 0; g < cant; g++){
+            matTemporal[h][g] = INF;
         }
     }
     //--------
-    if(p!=NULL){
+    if(p != NULL){
         int i;
-        for(i=0;i<cant;i++){
-            temp=p->siguiente_ady;
-            while(temp!=NULL){
-                matTemporal[i][temp->pos]=temp->peso;
-                temp=temp->siguiente_ady;
+        for(i = 0; i < cant; i++){
+            temp = p->siguiente_ady;
+            while(temp != NULL){
+                matTemporal[i][temp->pos] = temp->peso;
+                temp = temp->siguiente_ady;
             }
-            p=p->sig_vertice;
+            p = p->sig_vertice;
         }
     }
-    temp=NULL;
-    p=NULL;
+    temp = NULL;
+    p = NULL;
     delete temp;
     delete p;
 }
@@ -842,24 +866,23 @@ void Grafo::EncontrarNodo(int val)
 }
 
 //Encuentra al nodo de origen y lo deja en el puntero Elemento
-
-void Grafo::BuscarVerticePos(int vas)
-{
-    if(VacioGrafo())
-        Elemento=NULL;
+void Grafo::BuscarVerticePos(int vas){
+    if(VacioGrafo()){
+        Elemento = NULL;
+    }
     else{
-        bool enc=false;
-        NodoGrafo *p=PrimerNodo;
-        while(p!=NULL & enc==false){
-            if(p->pos==vas){
-                enc=true;
+        bool enc = false;
+        NodoGrafo *p = PrimerNodo;
+        while((p != NULL) & (enc == false)){
+            if(p->pos == vas){
+                enc = true;
             }
             else{
-                p=p->sig_vertice;
+                p = p->sig_vertice;
             }
         }
-        Elemento=p;
-        p=NULL;
+        Elemento = p;
+        p = NULL;
         delete p;
     }
 }
@@ -999,39 +1022,34 @@ Grafo Grafo::CreaGrafoInvertido()
 
 //Crea el grafo no dirigido
 
-Grafo Grafo::CreaGrafoNoDirigido()
-{
+Grafo Grafo::CreaGrafoNoDirigido(){
     Grafo gi;
     //Carga los vertices
     gi.CargarPaises();
-    //gi.CargarAeropuertos();
-    char buffer[100]="";
-    char *pch;
-    int codp=0,codl=0;
+    int codp = 0, codl = 0;
     int peso;
-    ifstream encabezados ("AristasGG.txt");
-    if(!encabezados.is_open()){
+    QStringList data;
+    QString line;
+    QFile encabezados("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/AristasGG.txt");
+    if(!encabezados.open(QFile::ReadOnly | QFile::Text)){
         qDebug() << "Error archivo Aristas no existe\n";
+        return gi;
     }
     else{
-        while(!encabezados.eof()){
-            encabezados.getline (buffer,100);
-            if(strcmp(buffer,"")){
-                pch = strtok (buffer,"; ");
-                codp=atoi(pch);
-                pch = strtok (NULL, ";");
-                codl=atoi(pch);
-                pch = strtok (NULL, ";");
-                peso=atoi(pch);
-                gi.InsertaAristas(codp,codl,peso);
-                //Inserta la arista invertida
-                gi.InsertaAristas(codl,codp,peso);
-            }
+        QTextStream in(&encabezados);
+        while(!in.atEnd()){
+            line = in.readLine();
+            data = line.split(";");
+            codp = data.at(0).toInt();
+            codl = data.at(1).toInt();
+            peso = data.at(2).toInt();
+            gi.InsertaAristas(codp,codl,peso);
+            //Inserta la arista invertida
+            gi.InsertaAristas(codl,codp,peso);
         }
     }
     gi.CrearMatrizAdyacencia();
-    pch=NULL;
-    delete pch;
+    encabezados.close();
     return gi;
 }
 
@@ -1068,7 +1086,6 @@ void Grafo::GenerarArbolN(int cod)
 }
 
 //Visita un nodo y lo imprime
-
 void Grafo::GenerarArbolNaux(NodoGrafo *a)
 {
     //Visitar
@@ -1095,7 +1112,7 @@ void Grafo::GenerarArbolNaux(NodoGrafo *a)
             }
             else{
                 Arbol.EncontrarElem(Elemento->CodVerticeGG);
-                if(!Arbol.EsHijo(a->CodVerticeGG,Arbol.ElementoB) & Elemento->CodVerticeGG!=a->CodVerticeGG){
+                if(!Arbol.EsHijo(a->CodVerticeGG,Arbol.ElementoB) & (Elemento->CodVerticeGG!=a->CodVerticeGG)){
                     Arbol.insertarAR(a->CodVerticeGG,Elemento->CodVerticeGG);
                 }
             }
