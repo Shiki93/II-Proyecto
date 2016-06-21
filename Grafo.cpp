@@ -500,37 +500,37 @@ void Grafo::Prim(int cod){
     QTextStream out(&archivo);
     if(!VacioGrafo()){
         EncontrarNodo(cod);
-        if(Elemento!=NULL){
-            int i,j,z,e,min,Coste[TamArr],Mas_cerca[TamArr],Con[TamArr],VectMc[TamArr];
+        if(Elemento != NULL){
+            int i, j, z, e, min, Coste[TamArr], Mas_cerca[TamArr], Con[TamArr], VectMc[TamArr];
             long ct;
-            e=Elemento->pos;
+            e = Elemento->pos;
             CrearMatrizValoradaNoDirigida();
-            qDebug()<<"Algoritmo de Prim: "<<endl;
-            out<<"Algoritmo de Prim: "<<endl;
+            qDebug() << "Algoritmo de Prim: " << endl;
+            out << "Algoritmo de Prim: " << endl;
             //Inicializa el vector de conjuntos
-            for(i=0;i<cant;i++){
-                Con[i]=0;
-                VectMc[i]=0;
+            for(i = 0; i < cant; i++){
+                Con[i] = 0;
+                VectMc[i] = 0;
             }
-            ct=0;
+            ct = 0;
             //Visita el primer vertice
-            Con[e]=1;
+            Con[e] = 1;
             //Carga los pesos del primer vector en el vector de comparacion
-            for (i=0;i<cant;i++){
-                if(i!=e){
-                    Coste[i]=matTemporal[e][i];
-                    Mas_cerca[i]=e;
+            for (i = 0;i < cant; i++){
+                if(i != e){
+                    Coste[i] = matTemporal[e][i];
+                    Mas_cerca[i] = e;
                 }
             }
-            qDebug()<<"Aristas seleccionadas: "<<endl;
-            out<<"Aristas seleccionadas: "<<endl;
-            for(i=0;i<cant;i++){
-                if(i!=e){
-                    min=Coste[e+1];
-                    z=e+1;
+            qDebug() << "Aristas seleccionadas: " << endl;
+            out << "Aristas seleccionadas: " << endl;
+            for(i = 0; i < cant; i++){
+                if(i != e){
+                    min = Coste[e+1];
+                    z = e+1;
                     //busca el menor de los pesos
-                    for(j=0;j<cant;j++){
-                        if((j != e) & (j!=e+1)){
+                    for(j = 0; j < cant; j++){
+                        if((j != e) & (j != e+1)){
                             if(Coste[j] < min){
                                 min = Coste[j];
                                 z = j;
@@ -544,18 +544,18 @@ void Grafo::Prim(int cod){
                         //marca el valor para no repetirlo
                         //Imprime la arista que selecciono como minima
                         BuscarVerticePos(z);
-                        qDebug()<<Elemento->NombrePais<<" -> ";
-                        out<<Elemento->NombrePais<<" -> ";
+                        qDebug() << Elemento->NombrePais << " -> ";
+                        out << Elemento->NombrePais << " -> ";
                         BuscarVerticePos(Mas_cerca[z]);
-                        qDebug()<<Elemento->NombrePais<<endl;
-                        out<<Elemento->NombrePais<<endl;
+                        qDebug() << Elemento->NombrePais << endl;
+                        out << Elemento->NombrePais << endl;
                         //lo marca como inf para no tomarlo en cuenta
-                        Coste[z]=INF;
+                        Coste[z] = INF;
                     }
-                    Con[z]=1;
+                    Con[z] = 1;
                     //verifica ciclos
-                    for(j=0;j<cant;j++){
-                        if(j!=e){
+                    for(j = 0; j < cant; j++){
+                        if(j != e){
                             if((matTemporal[z][j] < Coste[j]) & (Con[j] == 0)){
                                 Coste[j] = matTemporal[z][j];
                                 Mas_cerca[j] = z;
@@ -572,13 +572,13 @@ void Grafo::Prim(int cod){
                 if(VectMc[i] != 0){
                     qDebug() << VectMc[i] << " ";
                     out << VectMc[i] << " ";
+                    this->GenerarArbolN(VectMc[i]);
                 }
-
             }
-            qDebug()<<"}"<<endl;
-            out<<"}"<<endl;
-            qDebug()<<endl<<"El costo es: "<<ct<<endl;
-            out<<endl<<"El costo es: "<<ct<<endl;
+            qDebug() << "}" << endl;
+            out << "}" << endl;
+            qDebug() << endl << "El costo es: " << ct << endl;
+            out << endl <<"El costo es: " << ct << endl;
         }
     }
     else{

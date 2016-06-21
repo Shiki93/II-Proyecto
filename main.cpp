@@ -8,14 +8,10 @@ int main(int argc, char *argv[])
     Grafo *g = new Grafo();
     g->CrearGrafo();
 
-    g->GenerarArbolN(11);
+    //g->GenerarArbolN(11);
 
-    g->Arbol.ImprimirRefPadre();
-
-    g->Arbol.Preorden(11);
-    g->Arbol.PostOrdenAR();
-
-    g->Arbol.ImprimirRefPadre();
+    g->Prim(11);
+    g->Dijkstra(21, 11);
 
 
     return a.exec();

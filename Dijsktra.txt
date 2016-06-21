@@ -1,21 +1,15 @@
 Francia
 Costa Rica
-Panama
-elto	Costo minimo	Costo total		UltimaConexion
+no resuelto	Costo minimo	Costo total		UltimaConexion
 Francia
 		Costa Rica(9)
-		Spain(6)
+		Espa�a(6)
 		Panama(8)			9		9		Francia/Costa Rica
 #########################################################################################################################
 
-						8		0		Francia/Panama
-#########################################################################################################################
-
+		Panama(0)
 		Francia(0)
-		Ecuador(0)
-		Costa Rica(0)
-		Spain(0)
-		Francia(0)
-		Spain(0)
+		Espa�a(0)
 		Ecuador(0)
 		Panama(0)
+		Espa�a(0)
