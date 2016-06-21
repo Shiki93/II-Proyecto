@@ -1,12 +1,12 @@
 #include "Colas.h"
 #include <QDebug>
-using namespace std;
+
 //Inserta al final un elemento
 void Cola::Encolar(int Elem){
     if(VaciaCola())
-        PrimerNodo=UltimoNodo=new NodosCola(Elem);
+        PrimerNodo=UltimoNodo=new Nodocola(Elem);
     else
-        UltimoNodo=(*UltimoNodo).siguiente=new NodosCola(Elem);
+        UltimoNodo=(*UltimoNodo).siguiente=new Nodocola(Elem);
 }
 
 //Elimina al Inicio un elemento
@@ -17,7 +17,7 @@ void Cola::Desencolar(){
         if(PrimerNodo == UltimoNodo)
             PrimerNodo=UltimoNodo=NULL;
         else{
-            NodosCola *aux=PrimerNodo;
+            Nodocola *aux=PrimerNodo;
             PrimerNodo=PrimerNodo->siguiente;
             delete aux;
         }
@@ -34,7 +34,7 @@ int Cola::Frente(){
 //Retorna si es miembro un elemento
 bool Cola::Miembro(int ele){
     bool enc=false;
-    NodosCola *aux=PrimerNodo;
+    Nodocola *aux=PrimerNodo;
     while((aux != NULL) && (enc == false)){
         if(ele==aux->datos){
             enc=true;
@@ -50,7 +50,7 @@ bool Cola::Miembro(int ele){
 
 //Imprime la Cola
 void Cola::Imprimir(){
-    NodosCola *p;
+    Nodocola *p;
     p=PrimerNodo;
     if(PrimerNodo==NULL){
         qDebug()<<"Cola Vacia\n";
@@ -63,28 +63,5 @@ void Cola::Imprimir(){
             p=p->siguiente;
         }
         delete p;
-    }
-}
-
-void Cola::eliminarProcesadors(int pVF){
-    if (!PrimerNodo){
-        NodosCola *aux;
-        aux = PrimerNodo;
-        if(aux->datos == pVF){
-            PrimerNodo = aux->siguiente;
-        }
-        else{
-            while(aux){
-                if(aux->siguiente != NULL){
-                    if(aux->siguiente->datos == pVF){
-                        aux->siguiente = aux->siguiente->siguiente;
-                    }
-                    else
-                        aux = aux->siguiente;
-                }
-                else
-                    aux = aux->siguiente;
-            }
-        }
     }
 }

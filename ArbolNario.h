@@ -1,14 +1,10 @@
 #pragma once
 #include <iostream>
-#include "ListaSimpleAN.h"
-//#include <fstream>
+#include "ListaInt.h"
 
-using namespace std;
-//******************  Clase para Arbol N-ario *******************
-//Nodo para el Arbol N-ario
 class NodosArbolNario{
     public:
-    ListaSimple ListaAR;
+    ListaInt ListaAR;
     int datos;
     int num,bajo;
     NodosArbolNario *padre;
@@ -21,22 +17,21 @@ class NodosArbolNario{
 };
 
 class ArbolNario{
-    public:
-
-    NodosArbolNario *ElementoB;
-    bool enco,tienepts;
-    int va,niv,ia;
-    QString matpts[200];
-    NodosArbolNario *Raiz;
-    //Constructor
-    ArbolNario(){
-        ElementoB=NULL;
-        Raiz=NULL;
-        enco=false;
-        tienepts=false;
-        va=1;
-        ia=0;
-        niv=1;
+    public:    
+        NodosArbolNario *ElementoB;
+        bool enco,tienepts;
+        int va,niv,ia;
+        QString matpts[200];
+        NodosArbolNario *Raiz;
+        //Constructor
+        ArbolNario(){
+            ElementoB=NULL;
+            Raiz=NULL;
+            enco=false;
+            tienepts=false;
+            va=1;
+            ia=0;
+            niv=1;
     }
     //Retorna si esta vacio el Arbol N-ario
     int VacioArbol(){

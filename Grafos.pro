@@ -17,20 +17,20 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     ArbolNario.cpp \
-    ListaSimple.cpp \
-    Colas.cpp \
     Grafo.cpp \
     Lista.cpp \
     NodoCola.cpp \
-    Pila.cpp
+    Pila.cpp \
+    Colas.cpp \
+    ListaInt.cpp
 
 HEADERS += \
     ArbolNario.h \
-    ListaSimpleAN.h \
-    Colas.h \
     Grafo.h \
     NodoGrafo.h \
     NodoAdyacente.h \
     Lista.h \
     NodoCola.h \
-    Pila.h
+    Pila.h \
+    ListaInt.h \
+    Colas.h

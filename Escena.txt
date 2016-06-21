@@ -1,0 +1,889 @@
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,
+
+11;0;24;Espa�a,21,Francia,6,,43,Panama,4,,96,Costa Rica,3,
+21;1;24;Francia,96,Costa Rica,9,,11,Espa�a,6,,43,Panama,8,
+43;2;24;Panama,21,Francia,8,,11,Espa�a,4,,96,Costa Rica,2,,100,Ecuador,3,
+96;3;24;Costa Rica,43,Panama,2,,100,Ecuador,1,,11,Espa�a,3,,21,Francia,9,
+11;4;24;Chile
+100;5;24;Ecuador,43,Panama,3,,96,Costa Rica,1,

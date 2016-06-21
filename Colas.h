@@ -1,31 +1,29 @@
 #pragma once
-#include <iostream>
-//******************  Clase para las Colas *******************
-//Nodo para la Cola
-class NodosCola{
+#include <QDebug>
+
+class Nodocola{
     public:
     int datos;
-    NodosCola *siguiente;
+    Nodocola *siguiente;
     //Constructores
-    NodosCola(){
+    Nodocola(){
         datos=0;
         siguiente=NULL;
     }
-    NodosCola(int valor){
+    Nodocola(int valor){
         datos=valor;
         siguiente=NULL;
     }
-    NodosCola(int valor,NodosCola *signodo){
+    Nodocola(int valor,Nodocola *signodo){
         datos=valor;
         siguiente=signodo;
     }
 };
-//Prototipo Cola
-//-----------------------------------------------------
+
 class Cola{
     public:
-    NodosCola *PrimerNodo;
-    NodosCola *UltimoNodo;
+    Nodocola *PrimerNodo;
+    Nodocola *UltimoNodo;
     //Constructor
     Cola(){
         PrimerNodo=UltimoNodo=NULL;
@@ -44,5 +42,4 @@ class Cola{
     int Frente();
     //Imprime la lista
     void Imprimir();
-    void eliminarProcesadors(int pVF);
 };

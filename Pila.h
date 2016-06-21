@@ -1,22 +1,20 @@
 #pragma once
 #include <iostream>
-//******************  Clase para la Pila  *******************
 
-//Nodo para la Pila
-class NodosPila{
+class NodoPila{
     public:
     int datos;
-    NodosPila *siguiente;
+    NodoPila *siguiente;
     //Constructores
-    NodosPila(){
+    NodoPila(){
         datos=0;
         siguiente=NULL;
     }
-    NodosPila(int valor){
+    NodoPila(int valor){
         datos=valor;
         siguiente=NULL;
     }
-    NodosPila(int valor,NodosPila *signodo){
+    NodoPila(int valor,NodoPila *signodo){
         datos=valor;
         siguiente=signodo;
     }
@@ -24,22 +22,22 @@ class NodosPila{
 
 class Pila{
     public:
-    NodosPila *PrimerNodo;
-    NodosPila *UltimoNodo;
-    //Constructor
-    Pila(){
-        PrimerNodo=UltimoNodo=NULL;
-    }
-    //Retorna si esta vacia la lista
-    int VaciaPila(){
-        return PrimerNodo==NULL;
-    }
-    //Apila un elemento
-    void Push(int);
-    //Desapila un elemento
-    void Pop();
-    //Retorna el tope de la pila
-    int Tope();
-    //Imprime la lista
-    void Imprimir();
+        NodoPila *PrimerNodo;
+        NodoPila *UltimoNodo;
+        //Constructor
+        Pila(){
+            PrimerNodo=UltimoNodo=NULL;
+        }
+        //Retorna si esta vacia la lista
+        int VaciaPila(){
+            return PrimerNodo==NULL;
+        }
+        //Apila un elemento
+        void Push(int);
+        //Desapila un elemento
+        void Pop();
+        //Retorna el tope de la pila
+        int Tope();
+        //Imprime la lista
+        void Imprimir();
 };

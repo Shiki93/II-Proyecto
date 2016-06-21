@@ -1,29 +1,27 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include "Grafo.h"
 #include <QString>
 #include <QDebug>
 #include <QFile>
 #include <QTextStream>
-#include "Colas.h"
 
-Nodolista Grafo::ListaNodos(){
+NodoLista Grafo::ListaNodos(){
     NodoGrafo *nodo = PrimerNodo;
-    Nodolista lista;
+    NodoLista lista;
     while (nodo != NULL){
-        lista.InsertarFinal(QString::number(nodo->CodVerticeGG));
+        lista.InsertarFinal(QString::number(nodo->CodigoVertice));
         nodo = nodo->sig_vertice;
     }
     return lista;
 }
 
-Nodolista Grafo::Listaadyacentes(){
+NodoLista Grafo::Listaadyacentes(){
     NodoGrafo *nodo = PrimerNodo;
     NodoAdyacente *t;
-    Nodolista lista;
+    NodoLista lista;
     while (nodo != NULL){
         for (t = nodo->siguiente_ady; t != NULL; t = t->siguiente_ady){
-            lista.InsertarFinal(nodo->CodVerticeGG);
-            lista.InsertarFinal(t->Cod);
+            lista.InsertarFinal(nodo->CodigoVertice);
+            lista.InsertarFinal(t->codigo);
             lista.InsertarFinal(t->peso);
         }
         nodo = nodo->sig_vertice;
@@ -31,7 +29,7 @@ Nodolista Grafo::Listaadyacentes(){
     return lista;
 }
 
-int Grafo::tamano(){
+int Grafo::tamanio(){
     int cont = 0;
     NodoGrafo *nodo = PrimerNodo;
     while(nodo!=NULL){
@@ -43,7 +41,7 @@ int Grafo::tamano(){
 
 //Constructores inicial
 NodoAdyacente::NodoAdyacente(){
-    Cod = 0;
+    codigo = 0;
     peso = 0;
     pos = 0;
     siguiente_ady = NULL;
@@ -51,16 +49,16 @@ NodoAdyacente::NodoAdyacente(){
 
 //Constructor para nodos
 NodoAdyacente::NodoAdyacente(int co,int pe,int po,QString nombre){
-    Cod = co;
+    codigo = co;
     peso = pe;
     pos = po;
-    NombrePais = nombre;
+    Nombre = nombre;
     siguiente_ady = NULL;
 }
 
 //Constructores inicial
 NodoGrafo::NodoGrafo(){
-    CodVerticeGG = 0;
+    CodigoVertice = 0;
     Tipo = 0;
     pos = 0;
     sig_vertice = NULL;
@@ -69,8 +67,8 @@ NodoGrafo::NodoGrafo(){
 
 //Constructor para paises
 NodoGrafo::NodoGrafo(int cod, QString nombre,int posi){
-    CodVerticeGG = cod;
-    NombrePais = nombre;
+    CodigoVertice = cod;
+    Nombre = nombre;
     pos = posi;
     sig_vertice = NULL;
     siguiente_ady = NULL;
@@ -102,7 +100,7 @@ bool Grafo::CargarPaises(){
 }
 
 //Carga las aristas
-bool Grafo::CargarAristasGG(){
+bool Grafo::CargarAristas(){
     int idPartida = 0, idLlegada = 0;
     int peso;
     QStringList data;
@@ -149,14 +147,14 @@ void Grafo::InsertaAristas(int CodP,int CodL,int Peso){
             NodoGrafo *j=this->Elemento;
             if(j!=NULL){
                 if(p->siguiente_ady==NULL){
-                    p->siguiente_ady=new NodoAdyacente(CodL,Peso,j->pos,j->NombrePais);
+                    p->siguiente_ady=new NodoAdyacente(CodL,Peso,j->pos,j->Nombre);
                 }
                 else{
                     NodoAdyacente *temp=p->siguiente_ady;
                     while(temp->siguiente_ady!=NULL){
                         temp=temp->siguiente_ady;
                     }
-                    temp->siguiente_ady=new NodoAdyacente(CodL,Peso,j->pos,j->NombrePais);
+                    temp->siguiente_ady=new NodoAdyacente(CodL,Peso,j->pos,j->Nombre);
                     temp=NULL;
                     delete temp;
                 }
@@ -181,7 +179,7 @@ void Grafo::CrearGrafo(){
     bool falloAlCargarPaises,falloAlCargarAristas;
     falloAlCargarPaises = CargarPaises();
     if(!falloAlCargarPaises){
-        falloAlCargarAristas = CargarAristasGG();
+        falloAlCargarAristas = CargarAristas();
         if(!falloAlCargarAristas){
             CrearMatrizAdyacencia();
             qDebug()<<"Grafo creado\n";
@@ -220,10 +218,10 @@ void Grafo::ImprimirGrafo(){
     else{
         while(p != NULL){
             qDebug() << "###################################################################" << endl;
-            qDebug() << p->NombrePais << p->CodVerticeGG << ": ";
+            qDebug() << p->Nombre << p->CodigoVertice << ": ";
             temp = p->siguiente_ady;
             while(temp != NULL){
-                qDebug() << "--> " << temp->NombrePais << "(" << temp->peso<< ") ";
+                qDebug() << "--> " << temp->Nombre << "(" << temp->peso<< ") ";
                 temp=temp->siguiente_ady;
             }
             qDebug()<<endl;
@@ -244,12 +242,12 @@ void Grafo::ImprimirMatriz(int D[TamArr][TamArr]){
         //Imprime los encabezados de la tabla
         qDebug() << "\t";
         for(p=PrimerNodo;p!=NULL;p=p->sig_vertice)
-            qDebug() << p->CodVerticeGG << "\t";
+            qDebug() << p->CodigoVertice << "\t";
         qDebug() << endl;
         p=PrimerNodo;
         //ciclo de impresion de valores
         for(j=0;j<cant;j++){
-            qDebug() << p->CodVerticeGG << "\t";
+            qDebug() << p->CodigoVertice << "\t";
             for(i=0;i<cant;i++){
                 if(D[j][i]==INF)
                     qDebug() << "INF\t";
@@ -266,74 +264,13 @@ void Grafo::ImprimirMatriz(int D[TamArr][TamArr]){
         qDebug()<<"Grafo Vacio\n";
 }
 
-void Grafo::Dijkstra(ListaSimple *DijkstraOUT, int PP){
-    if(this->EsConexo() && this->BuscarVerticepos(PP)){
-        ListaSimple *colaProceso;
-        Cola *CP, *respaldo;
-        int distanciaTotal = 0, process = 0;
-        NodoGrafo * aux;
-        colaProceso->InsertaFinal(PP);
-        ListaSimple *DEL;
-        bool fin = true;
-        if(this->VacioGrafo()){
-            fin = false;
-        }
-        while(this->tamano() != DEL->largoLista() + 1 && fin){
-            while(!colaProceso->VaciaLista()){
-                process = colaProceso->PrimerNodo->arr;
-                colaProceso->EliminaInicio();
-                aux = this->BuscarVerticepos(process);
-                while(aux){ // Recorre los adyacentes del vértice indicado
-                    if(!respaldo->Miembro(aux->CodVerticeGG)){
-                        respaldo->Encolar(aux->CodVerticeGG);
-                        CP->Encolar(aux->CodVerticeGG);
-                    }
-                    aux = aux->sig_vertice;
-                }
-            }
-            if(CP->Frente() != NULL)
-                distanciaTotal = CP->PrimerNodo->datos;
-            ListaSimple *eliminar;
-            // Pasa todos los elementos del frente de la cola de prioridad que tengan la misma distancia total
-            while(1){
-                if(CP->Frente() != NULL){
-                    if(CP->PrimerNodo->datos == distanciaTotal){
-                        DijkstraOUT->InsertaFinal(CP->PrimerNodo->datos);
-                        DijkstraOUT->InsertaFinal(CP->PrimerNodo->datos);
-                        DijkstraOUT->InsertaFinal(CP->PrimerNodo->datos);
-                        if(!DEL->existeConjunto(CP->PrimerNodo->datos)){
-                            DEL->InsertaFinal(CP->PrimerNodo->datos);
-                            eliminar->InsertaFinal(CP->PrimerNodo->datos);
-                            colaProceso->InsertaFinal(CP->PrimerNodo->datos);
-                        }
-                        CP->Desencolar();
-                    }
-                    else
-                        break;
-                }
-                else
-                    break;
-            }
-
-            // Eliminamos de toda la cola los elementos ya procesados y salidos de la cola
-            while(!eliminar->VaciaLista()){
-                CP->eliminarProcesadors(eliminar->PrimerNodo->arr);
-                eliminar->EliminaInicio();
-            }
-        }
-    }
-    else
-        cout << "[Warning-algoritmoDijkstra-Grafo]: Grafo NO Conexo o no existe vertice de inicio."<<endl;
-}
-
-
 void Grafo::Dijkstra(int inicio,int fin){
     NodoAdyacente *t;
     NodoGrafo *nodo;
-    Nodolista camino;
-    Nodolista resueltos;
-    Nodolista resueltosAux;
-    NodolistaC *colaPrioridad = new NodolistaC();
+    NodoLista camino;
+    NodoLista resueltos;
+    NodoLista resueltosAux;
+    NodoCola *colaPrioridad = new NodoCola();
     int pesoTotal = 0;
     QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/Dijsktra.txt");
     if(!archivo.open(QFile::WriteOnly | QFile::Text)){
@@ -346,25 +283,25 @@ void Grafo::Dijkstra(int inicio,int fin){
         out << "Nodo resuelto" << "\t" << "Nodo no resuelto" << "\t" << "Costo minimo" << "\t" << "Costo total" << "\t\t" << "UltimaConexion" << endl;
         if(nodo != NULL){
             //Proceso para el primero
-            qDebug() << nodo->NombrePais << endl;
-            out << nodo->NombrePais << endl;
+            qDebug() << nodo->Nombre << endl;
+            out << nodo->Nombre << endl;
             for(t = nodo->siguiente_ady; t != NULL; t = t->siguiente_ady){
                 colaPrioridad->Insertar(nodo, t, t->peso);
-                qDebug() << "\t\t" << t->NombrePais << "(" << t->peso << ")";
-                out << "\t\t" << t->NombrePais << "(" << t->peso << ")";
+                qDebug() << "\t\t" << t->Nombre << "(" << t->peso << ")";
+                out << "\t\t" << t->Nombre << "(" << t->peso << ")";
                 if(t->siguiente_ady == NULL){
                     qDebug()<<"\t\t\t"<<colaPrioridad->obtenerInicio()->llegada->peso;
                     out<<"\t\t\t"<<colaPrioridad->obtenerInicio()->llegada->peso;
                     pesoTotal = pesoTotal + colaPrioridad->obtenerInicio()->llegada->peso;
                     qDebug()<< "\t\t" << colaPrioridad->obtenerInicio()->llegada->peso;
                     out<< "\t\t" << colaPrioridad->obtenerInicio()->llegada->peso;
-                    qDebug()<< "\t\t" << colaPrioridad->obtenerInicio()->origen->NombrePais << "/" << colaPrioridad->obtenerInicio()->llegada->NombrePais;
-                    out << "\t\t" << colaPrioridad->obtenerInicio()->origen->NombrePais << "/" << colaPrioridad->obtenerInicio()->llegada->NombrePais;
+                    qDebug()<< "\t\t" << colaPrioridad->obtenerInicio()->origen->Nombre << "/" << colaPrioridad->obtenerInicio()->llegada->Nombre;
+                    out << "\t\t" << colaPrioridad->obtenerInicio()->origen->Nombre << "/" << colaPrioridad->obtenerInicio()->llegada->Nombre;
                     camino.InsertarFinal(colaPrioridad->obtenerInicio()->origen, colaPrioridad->obtenerInicio()->llegada,
                                         colaPrioridad->obtenerInicio()->llegada->peso);
                     resueltos.InsertarFinal(colaPrioridad->obtenerInicio()->origen);
-                    resueltos.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
-                    resueltosAux.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
+                    resueltos.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->codigo));
+                    resueltosAux.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->codigo));
                 }
                 qDebug() << endl;
                 out<<endl;
@@ -375,14 +312,14 @@ void Grafo::Dijkstra(int inicio,int fin){
             out << endl;
             qDebug()<<endl;
             //Proceso para el resto
-            while(resueltos.largoLista()!= tamano()){
+            while(resueltos.largoLista()!= tamanio()){
                 //qDebug() << "Entro al While";
-                Nodolista *aux = resueltosAux.primero;
+                NodoLista *aux = resueltosAux.primero;
                 resueltos.MostrarLista();
                 //qDebug() << "Paso de mostrar";
                 while(aux){
                     //qDebug() << "Entro al while 2";
-                    nodo = BuscarVerticepos(aux->valor->CodVerticeGG);
+                    nodo = BuscarVerticepos(aux->valor->CodigoVertice);
                     //qDebug() << "Cargo el nodo";
                     if(nodo != NULL){
                         //qDebug() << "Entro al if";
@@ -407,14 +344,14 @@ void Grafo::Dijkstra(int inicio,int fin){
                 out << "\t\t" << colaPrioridad->obtenerInicio()->peso;
                 pesoTotal = colaPrioridad->obtenerInicio()->peso;
                 //ultima conexion
-                qDebug() << "\t\t" << colaPrioridad->obtenerInicio()->origen->NombrePais << "/" << colaPrioridad->obtenerInicio()->llegada->NombrePais << endl;
-                out << "\t\t" << colaPrioridad->obtenerInicio()->origen->NombrePais << "/" << colaPrioridad->obtenerInicio()->llegada->NombrePais << endl;
+                qDebug() << "\t\t" << colaPrioridad->obtenerInicio()->origen->Nombre << "/" << colaPrioridad->obtenerInicio()->llegada->Nombre << endl;
+                out << "\t\t" << colaPrioridad->obtenerInicio()->origen->Nombre << "/" << colaPrioridad->obtenerInicio()->llegada->Nombre << endl;
                 //para saber camino despues
                 camino.InsertarFinal(colaPrioridad->obtenerInicio()->origen, colaPrioridad->obtenerInicio()->llegada, colaPrioridad->obtenerInicio()->peso);
                 resueltos.InsertarFinal(colaPrioridad->obtenerInicio()->origen);
-                resueltos.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
+                resueltos.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->codigo));
                 resueltosAux.BorrarFinal();
-                resueltosAux.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->Cod));
+                resueltosAux.InsertarFinal(BuscarVerticepos(colaPrioridad->obtenerInicio()->llegada->codigo));
 
                 colaPrioridad->eliminarCoincidencias(colaPrioridad->obtenerInicio()->llegada);
                 qDebug()<<"#########################################################################################################################"<<endl;
@@ -428,129 +365,6 @@ void Grafo::Dijkstra(int inicio,int fin){
         archivo.flush();
         archivo.close();
     }
-}
-
-//Recorre el grafo en profundidad
-void Grafo::RecorridoProfundidad(int cod){
-    if(!VacioGrafo()){
-        NodoGrafo *a;
-        NodoAdyacente *t;
-        Pila pil;
-
-        QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/Profundidad.txt");
-        if(!archivo.open(QFile::WriteOnly | QFile::Text)){
-            return;
-        }
-        QTextStream out(&archivo);
-        qDebug()<<"Recorrido en Profundidad: \n";
-        out<<"Recorrido en Profundidad: "<<endl;
-        //Resetea la matriz matVisitas
-        int k,e,i;
-        for (k=0; k<cant; k++)
-            matVisitas[k]=0;
-
-        EncontrarNodo(cod);
-        if(Elemento!=NULL){
-            e=Elemento->pos;
-            for(i=0;i<2;i++){
-                for (k=e; k<cant; k++){
-                    if (matVisitas[k]==0){
-                        matVisitas[k]=1;
-                        pil.Push(k);
-                        while(!pil.VaciaPila()){
-                            BuscarVerticePos(pil.Tope());
-                            qDebug()<<Elemento->NombrePais<<"-";
-                            out<<Elemento->NombrePais<<"-";
-                            pil.Pop();
-                            a=Elemento;
-                            //apila los adyacentes no visitados
-                            for (t=a->siguiente_ady; t!=NULL; t=t->siguiente_ady){
-                                if (matVisitas[t->pos]==0){
-                                    pil.Push(t->pos);
-                                    matVisitas[t->pos]=1;
-                                }
-                            }
-                        }
-                    }
-                }
-                e=0;
-            }
-
-        }
-        else{
-            qDebug()<<"Elemento no encontrado";
-        }
-        qDebug()<<endl;
-        a=NULL;
-        delete a;
-        t=NULL;
-        delete t;
-        archivo.flush();
-        archivo.close();
-    }
-    else
-        qDebug()<<"Grafo Vacio\n";
-}
-
-//Recorre el grafo en anchura
-void Grafo::RecorridoAnchura(int cod){
-    if(!VacioGrafo()){
-        NodoGrafo *a;
-        NodoAdyacente *t;
-        Cola col;
-        QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/Anchura.txt");
-        if(!archivo.open(QFile::WriteOnly | QFile::Text)){
-            return;
-        }
-        QTextStream out(&archivo);
-        //Resetea el la matriz matVisitas
-        qDebug()<<"Recorrido en Anchura: "<<endl;
-        out<<"Recorrido en Anchura: "<<endl;
-        int k,e,i;
-        for(k = 0; k < cant; k++)
-            matVisitas[k] = 0;
-
-        EncontrarNodo(cod);
-        if(Elemento != NULL){
-            e = Elemento->pos;
-            for(i = 0; i < 2; i++){
-                for (k = e; k < cant; k++){
-                    if (matVisitas[k]==0){
-                        matVisitas[k]=1;
-                        col.Encolar(k);
-                        while(!col.VaciaCola()){
-                            BuscarVerticePos(col.Frente());
-                            qDebug()<<Elemento->NombrePais<<"-";
-                            out << Elemento->NombrePais << "-";
-                            col.Desencolar();
-                            a = Elemento;
-                            //encola los adyacentes no visitados
-                            for (t=a->siguiente_ady; t!=NULL; t=t->siguiente_ady){
-                                if (matVisitas[t->pos]==0){
-                                    col.Encolar(t->pos);
-                                    matVisitas[t->pos]=1;
-                                }
-                            }
-                        }
-                    }
-                }
-                e=0;
-            }
-        }
-        else{
-            qDebug()<<"Elemento no encontrado";
-        }
-        qDebug()<<endl;
-        a=NULL;
-        delete a;
-        t=NULL;
-        delete t;
-
-        archivo.flush();
-        archivo.close();
-    }
-    else
-        qDebug()<<"Grafo Vacio\n";
 }
 
 //Algoritmo de Prim
@@ -606,11 +420,11 @@ void Grafo::Prim(int cod){
                         //marca el valor para no repetirlo
                         //Imprime la arista que selecciono como minima
                         BuscarVerticePos(z);
-                        qDebug() << Elemento->NombrePais << " -> ";
-                        out << Elemento->NombrePais << " -> ";
+                        qDebug() << Elemento->Nombre << " -> ";
+                        out << Elemento->Nombre << " -> ";
                         BuscarVerticePos(Mas_cerca[z]);
-                        qDebug() << Elemento->NombrePais << endl;
-                        out << Elemento->NombrePais << endl;
+                        qDebug() << Elemento->Nombre << endl;
+                        out << Elemento->Nombre << endl;
                         //lo marca como inf para no tomarlo en cuenta
                         Coste[z] = INF;
                     }
@@ -632,6 +446,7 @@ void Grafo::Prim(int cod){
             out << "{ ";
             for(i = 0; i < cant; i++){
                 if(VectMc[i] != 0){
+
                     qDebug() << VectMc[i] << " ";
                     out << VectMc[i] << " ";
                 }
@@ -661,8 +476,8 @@ void Grafo::Kruskal(){
     if(!VacioGrafo()){
         int i, j, ct;
         //Ordena las aristas en orden ascendente y se las sede a listaOr
-        ListaSimple listaOr = OrdenarAristas();
-        NodosLista *imp;
+        ListaInt listaOr = OrdenarAristas();
+        NodoListaInt *imp;
         qDebug()<<"Algoritmo de Kruskal:" << endl;
         out << "Algoritmo de Kruskal: " << endl;
         if(listaOr.PrimerNodo != NULL){
@@ -671,11 +486,11 @@ void Grafo::Kruskal(){
             out << "Aristas seleccionadas: " << endl;
             imp = listaOr.PrimerNodo;
             BuscarVerticePos(imp->partida);
-            qDebug()<<Elemento->NombrePais<<" -> ";
-            out<<Elemento->NombrePais<<" -> ";
+            qDebug()<<Elemento->Nombre<<" -> ";
+            out<<Elemento->Nombre<<" -> ";
             BuscarVerticePos(imp->llegada);
-            qDebug()<<Elemento->NombrePais<<" Peso:"<<imp->peso<<endl;
-            out<<Elemento->NombrePais<<" Peso:"<<imp->peso<<endl;
+            qDebug()<<Elemento->Nombre<<" Peso: "<<imp->peso<<endl;
+            out<<Elemento->Nombre<<" Peso: "<<imp->peso<<endl;
             ct=imp->peso;
             //Resetea la matriz temporal
             for(i=0;i<cant;i++){
@@ -694,11 +509,11 @@ void Grafo::Kruskal(){
                     ct=ct+imp->peso;
                     //Imprime la arista seleccionada
                     BuscarVerticePos(imp->partida);
-                    qDebug()<<Elemento->NombrePais<<" -> ";
-                    out<<Elemento->NombrePais<<" -> ";
+                    qDebug()<<Elemento->Nombre<<" -> ";
+                    out<<Elemento->Nombre<<" -> ";
                     BuscarVerticePos(imp->llegada);
-                    qDebug()<<Elemento->NombrePais<<" Peso"<<imp->peso<<endl;
-                    out<<Elemento->NombrePais<<" Peso"<<imp->peso<<endl;
+                    qDebug()<<Elemento->Nombre<<" Peso: "<<imp->peso<<endl;
+                    out<<Elemento->Nombre<<" Peso: "<<imp->peso<<endl;
                     //Inserta la arista que no genero ciclos
                     matTemporal[imp->partida][imp->llegada]=1;
                     matTemporal[imp->llegada][imp->partida]=1;
@@ -714,36 +529,8 @@ void Grafo::Kruskal(){
     }
     else
         qDebug()<<"Grafo Vacio\n";
-
     archivo.flush();
     archivo.close();
-}
-
-//Recorre el grafo en profundidad y genera el arbol n-ario
-
-void Grafo::GenerarArbolNFC(int mac[TamArr]){
-    int k, i;
-    for (k = 0; k < cant; k++){
-        matVisitas[k] = 0;
-    }
-    int z = 0;
-    for (k = 0; k < cant; k++){
-        qDebug() << "Ronda: " << z;
-        z++;
-        i = mac[k];
-        qDebug() << "mac[k]:" << mac[k];
-        if(matVisitas[i] == 0){
-            BuscarVerticePos(i);
-            qDebug() << "Elemento es: " << this->Elemento->CodVerticeGG;
-            if(this->Arbol.Raiz != NULL){
-                this->Arbol.Insertar(this->Arbol.Raiz->datos, 1, this->Elemento->CodVerticeGG);
-            }
-            else{
-                this->Arbol.Insertar(0, 1, Elemento->CodVerticeGG);
-            }
-            GenerarArbolNaux(Elemento);
-        }
-    }
 }
 
 //Obtiene los puntos de articulacion de un grafo
@@ -787,7 +574,6 @@ void Grafo::CrearMatrizValorada(){
             matTemporal[h][g] = INF;
         }
     }
-    //--------
     if(p != NULL){
         int i;
         for(i = 0; i < cant; i++){
@@ -807,8 +593,7 @@ void Grafo::CrearMatrizValorada(){
 
 //Crear la matriz de valorada
 
-void Grafo::CrearMatrizValoradaNoDirigida()
-{
+void Grafo::CrearMatrizValoradaNoDirigida(){
     NodoGrafo *p=PrimerNodo;
     NodoAdyacente *temp;
     //Inicializa cada valor en Infinito
@@ -818,7 +603,6 @@ void Grafo::CrearMatrizValoradaNoDirigida()
             matTemporal[h][g]=INF;
         }
     }
-    //--------
     if(p!=NULL){
         int i;
         for(i=0;i<cant;i++){
@@ -838,15 +622,14 @@ void Grafo::CrearMatrizValoradaNoDirigida()
 }
 
 //Encuentra al nodo de origen
-void Grafo::EncontrarNodo(int val)
-{
+void Grafo::EncontrarNodo(int val){
     if(VacioGrafo())
         Elemento=NULL;
     else{
         bool enc=false;
         NodoGrafo *p=PrimerNodo;
         while((p!=NULL) & (enc==false)){
-            if(p->CodVerticeGG==val){
+            if(p->CodigoVertice==val){
                 enc=true;
             }
             else{
@@ -883,15 +666,14 @@ void Grafo::BuscarVerticePos(int vas){
 
 //Encuentra al nodo de origen y retorna dicho nodo
 
-pnodografo Grafo::BuscarVerticepos(int vas){
-    //pnodografo h;
+pNodoGrafo Grafo::BuscarVerticepos(int vas){
     if(VacioGrafo()){
         return NULL;
     }
     else{
         NodoGrafo *primer_Nodo=PrimerNodo;
         while(primer_Nodo!=NULL){
-            if(primer_Nodo->CodVerticeGG == vas){
+            if(primer_Nodo->CodigoVertice == vas){
                 return primer_Nodo;
             }
             else{
@@ -903,9 +685,7 @@ pnodografo Grafo::BuscarVerticepos(int vas){
 }
 
 //Corrobora si genera ciclos
-
-bool Grafo::GeneraCiclos(int p,int lle)
-{
+bool Grafo::GeneraCiclos(int p,int lle){
     int k;
     encCiclo=false;
     //Resetea el vector de visitas
@@ -917,9 +697,7 @@ bool Grafo::GeneraCiclos(int p,int lle)
 }
 
 //Corrobora si hay ciclo
-
-void Grafo::GeneraCiclosaux(int lle,int part)
-{
+void Grafo::GeneraCiclosaux(int lle,int part){
     int i;
     //Lo marca como visitado
     matVisitas[lle]=1;
@@ -929,8 +707,8 @@ void Grafo::GeneraCiclosaux(int lle,int part)
     }
     else{
         //revisa los adyacentes
-        for(i=0;i<cant & encCiclo==false;i++){
-            if (matVisitas[i]==0 & matTemporal[lle][i]!=INF){
+        for(i=0;((i<cant) & (encCiclo==false));i++){
+            if ((matVisitas[i]==0) & (matTemporal[lle][i]!=INF)){
                 GeneraCiclosaux(i,part);
             }
         }
@@ -938,11 +716,9 @@ void Grafo::GeneraCiclosaux(int lle,int part)
 }
 
 //Ordena las aristas de menor a mayor y retorna la lista de ellas
-
-ListaSimple Grafo::OrdenarAristas()
-{
+ListaInt Grafo::OrdenarAristas(){
     CrearMatrizValorada();
-    ListaSimple listaOr;
+    ListaInt listaOr;
     int min,i,j,p,tam;
     tam=cant*cant;
     //ordena las aristas de menor a mayor
@@ -977,7 +753,6 @@ ListaSimple Grafo::OrdenarAristas()
 }
 
 //Crea el grafo no dirigido
-
 Grafo Grafo::CreaGrafoNoDirigido(){
     Grafo gi;
     //Carga los vertices
@@ -1010,9 +785,7 @@ Grafo Grafo::CreaGrafoNoDirigido(){
 }
 
 //Recorre el grafo en profundidad y genera el arbol n-ario
-
-void Grafo::GenerarArbolN(int cod)
-{
+void Grafo::GenerarArbolN(int cod){
     //Resetea el la matriz matVisitas
     int k,e,i;
     for (k=0; k<cant; k++)
@@ -1026,9 +799,9 @@ void Grafo::GenerarArbolN(int cod)
                     BuscarVerticePos(k);
                     //Inserta al padre
                     if(Arbol.Raiz!=NULL)
-                        Arbol.Insertar(Arbol.Raiz->datos,1,Elemento->CodVerticeGG);
+                        Arbol.Insertar(Arbol.Raiz->datos,1,Elemento->CodigoVertice);
                     else
-                        Arbol.Insertar(0,1,Elemento->CodVerticeGG);
+                        Arbol.Insertar(0,1,Elemento->CodigoVertice);
                     GenerarArbolNaux(Elemento);
                 }
             }
@@ -1049,15 +822,10 @@ void Grafo::GenerarArbolNaux(NodoGrafo *a){
     matPosVis[las] = a->pos;
     las++;
     NodoAdyacente *t;
-
     for (t = a->siguiente_ady; t != NULL; t = t->siguiente_ady){
-
         if (matVisitas[t->pos] == 0){
             BuscarVerticePos(t->pos);
-            if(Elemento==NULL){
-                qDebug()<<"EL ELEMENTO ES NULL";
-            }
-            Arbol.Insertar(a->CodVerticeGG,0,Elemento->CodVerticeGG);
+            Arbol.Insertar(a->CodigoVertice,0,Elemento->CodigoVertice);
             GenerarArbolNaux(Elemento);
         }
     }
@@ -1065,18 +833,15 @@ void Grafo::GenerarArbolNaux(NodoGrafo *a){
     delete t;
     for(i = 0; i < cant; i++){
         BuscarVerticePos(i);
-        if(EsAdyacente(a,Elemento->CodVerticeGG)){
+        if(EsAdyacente(a,Elemento->CodigoVertice)){
             if(matVisitas[i]==0){
-                if(Elemento==NULL){
-                    qDebug()<<"EL ELEMENTO ES NULL";
-                }
-                Arbol.Insertar(a->CodVerticeGG,0,Elemento->CodVerticeGG);
+                Arbol.Insertar(a->CodigoVertice,0,Elemento->CodigoVertice);
                 GenerarArbolNaux(Elemento);
             }
             else{
-                Arbol.EncontrarElem(Elemento->CodVerticeGG);
-                if(!Arbol.EsHijo(a->CodVerticeGG,Arbol.ElementoB) & (Elemento->CodVerticeGG!=a->CodVerticeGG)){
-                    Arbol.insertarAR(a->CodVerticeGG,Elemento->CodVerticeGG);
+                Arbol.EncontrarElem(Elemento->CodigoVertice);
+                if(!Arbol.EsHijo(a->CodigoVertice,Arbol.ElementoB) & (Elemento->CodigoVertice!=a->CodigoVertice)){
+                    Arbol.insertarAR(a->CodigoVertice,Elemento->CodigoVertice);
                 }
             }
         }
@@ -1084,12 +849,11 @@ void Grafo::GenerarArbolNaux(NodoGrafo *a){
 }
 
 //Retorna si el parametro es adyacente al nodo
-bool Grafo::EsAdyacente(NodoGrafo *nodo,int cod)
-{
+bool Grafo::EsAdyacente(NodoGrafo *nodo,int cod){
     NodoAdyacente *p;
     bool encont=false;
     for(p=nodo->siguiente_ady;p!=NULL;p=p->siguiente_ady){
-        if(p->Cod==cod){
+        if(p->codigo==cod){
             p=NULL;
             delete p;
             encont=true;
@@ -1105,27 +869,27 @@ bool Grafo::EsAdyacente(NodoGrafo *nodo,int cod)
 bool Grafo::EsConexo(){
     NodoGrafo *nodoG = PrimerNodo;
     NodoAdyacente *nodoA;
-    Nodolista lista;
+    NodoLista lista;
     if (nodoG == NULL){
         qDebug() << "Grafo vacio" << endl;
         return false;
     }
     else{
-        if(lista.buscarElemento(nodoG->NombrePais) == false){
-                    lista.InsertarFinal(nodoG->NombrePais);
+        if(lista.buscarElemento(nodoG->Nombre) == false){
+                    lista.InsertarFinal(nodoG->Nombre);
         }
-        while (nodoG!=NULL&&lista.buscarElemento(nodoG->NombrePais)==true){
+        while (nodoG!=NULL&&lista.buscarElemento(nodoG->Nombre)==true){
             nodoA=nodoG->siguiente_ady;
             while(nodoA!=NULL){
-                if (lista.buscarElemento(nodoA->NombrePais)==false){
-                    lista.InsertarFinal(nodoA->NombrePais);
-                    qDebug() << nodoA->NombrePais << "->";
+                if (lista.buscarElemento(nodoA->Nombre)==false){
+                    lista.InsertarFinal(nodoA->Nombre);
+                    qDebug() << nodoA->Nombre << "->";
                 }
                 nodoA=nodoA->siguiente_ady;
             }
             nodoG=nodoG->sig_vertice;
         }
-        if (lista.largoLista()==tamano()){
+        if (lista.largoLista()==tamanio()){
             return true;
         }
         else{

@@ -100,6 +100,7 @@ void ArbolNario::EncontrarElemaux(NodosArbolNario *raizaux,int elem){
         }
     }
 }
+
 //Retorna si un valor es hijo de un nodo
 bool ArbolNario::EsHijo(int a,NodosArbolNario *nodo){
     NodosArbolNario *h;
@@ -175,6 +176,7 @@ void ArbolNario::ImprimirRefPadre(){
         qDebug()<<"\n";
     }
 }
+
 //Imprime el arbol por referencia del padre (aux)
 void ArbolNario::ImprimirRefPadreaux(NodosArbolNario *raizaux){
     if(raizaux==NULL){
@@ -188,6 +190,7 @@ void ArbolNario::ImprimirRefPadreaux(NodosArbolNario *raizaux){
         ImprimirRefPadreaux(raizaux->hermanoD);
     }
 }
+
 //Imprime el arbol en preorden
 void ArbolNario::Preorden(int nodo){
     QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/PreOrden.txt");
@@ -209,8 +212,8 @@ void ArbolNario::Preorden(int nodo){
     archivo.close();
 }
 
-//Retorna el nivel de insercion (entre mas bajo mayor prioridad a la hora de
-//insercion de las aristas de retroceso
+//Retorna el nivel de insercion (
+//entre mas bajo mayor prioridad a la hora de insercion de las aristas de retroceso
 int ArbolNario::Nivel(int cod){
     niv=1;
     Nivelaux(Raiz,cod);
@@ -218,6 +221,7 @@ int ArbolNario::Nivel(int cod){
     enco=false;
     return niv;
 }
+
 //Retorna el nivel del nodo
 void ArbolNario::Nivelaux(NodosArbolNario *raizaux,int cod){
     if(raizaux==NULL){
@@ -284,6 +288,7 @@ void ArbolNario::ImprimirAdesdeVertice(NodosArbolNario *raizaux,NodosArbolNario 
         }
     }
 }
+
 //Recorre el arbol en postOrden para poner los bajos
 void ArbolNario::PostOrdenAR(){
     QFile archivo("/home/shiki/Documentos/Datos/Proyecto 2/Grafos/PostOrden.txt");
@@ -316,7 +321,7 @@ void ArbolNario::PostOrdenARaux(NodosArbolNario *raizaux){
         int minAR = -1, minHijos = -1, mini;
         //Obtiene el menor bajo de las aristas de retroceso
         if(raizaux->ListaAR.PrimerNodo != NULL){
-            NodosLista *pde = raizaux->ListaAR.PrimerNodo;
+            NodoListaInt *pde = raizaux->ListaAR.PrimerNodo;
             EncontrarElem(pde->arr);
             minAR = ElementoB->bajo;
             for(pde = raizaux->ListaAR.PrimerNodo->siguiente; pde != NULL; pde = pde->siguiente){

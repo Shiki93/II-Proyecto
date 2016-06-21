@@ -1,44 +1,40 @@
+#pragma once
 #include <QDebug>
 #include "NodoAdyacente.h"
 #include "NodoGrafo.h"
 
-class NodolistaC{
+class NodoCola{
     public:
-        NodolistaC(){
+        NodoCola(){
             this->primero = NULL;
             this->actual = NULL;
             this->siguiente = NULL;
         }
-
-        NodolistaC(NodoGrafo *ori, NodoAdyacente *ll,int peso){
+        NodoCola(NodoGrafo *ori, NodoAdyacente *ll,int peso){
             this->origen = ori;
             this->llegada = ll;
             this->peso = peso;
-            this->siguiente = new NodolistaC();
+            this->siguiente = new NodoCola();
         }
-
-        NodolistaC(NodoGrafo *ori, NodoAdyacente *ll,int peso,  NodolistaC * signodo){
+        NodoCola(NodoGrafo *ori, NodoAdyacente *ll,int peso,  NodoCola * signodo){
             this->origen = ori;
             this->llegada = ll;
             this->peso = peso;
             this->siguiente = signodo;
         }
+        ~NodoCola();
 
-        ~NodolistaC();
         bool ListaVacia(){
             bool resul = this->primero == NULL;
             return resul;
         }
         void Insertar(NodoGrafo *ori, NodoAdyacente *ll,int peso);
-        void Insertarpru(int peso);
         void BorrarFinal();
         void MostrarLista();
-        NodolistaC *obtenerInicio();
+        NodoCola *obtenerInicio();
         void eliminarCoincidencias(NodoAdyacente *adyacente);
         void borrarPosicion(int pos);
         int largoLista();
-
-    public:
 
         NodoAdyacente *llegada;
         NodoGrafo *origen;
@@ -46,10 +42,8 @@ class NodolistaC{
         //ayuda
         bool final = false;
 
-        NodolistaC *siguiente = NULL;
-        NodolistaC *primero = NULL;
-        NodolistaC *actual = NULL;
+        NodoCola *siguiente = NULL;
+        NodoCola *primero = NULL;
+        NodoCola *actual = NULL;
 
-};
-
-typedef NodolistaC* pNodocola;
+};typedef NodoCola* pNodocola;

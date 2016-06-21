@@ -1,8 +1,8 @@
 Algoritmo de Kruskal: 
 Aristas seleccionadas: 
-Costa Rica -> Ecuador Peso:1
-Panama -> Costa Rica Peso2
-Espa�a -> Costa Rica Peso3
-Espa�a -> Francia Peso6
+Costa Rica -> Ecuador Peso: 1
+Panama -> Costa Rica Peso: 2
+Espa�a -> Costa Rica Peso: 3
+Espa�a -> Francia Peso: 6
 
 El costo es: 12
