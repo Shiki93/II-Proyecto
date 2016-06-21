@@ -126,3 +126,35 @@ void ListaSimple::ImprimirAR(){
     }
 }
 
+int ListaSimple::largoLista(){
+    int cont = 0;
+    if(this->VaciaLista()){
+        return 0;
+    }
+    else{
+        NodosLista *tmp = this->PrimerNodo;
+        while(tmp){
+            cont++;
+            tmp = tmp->siguiente;
+        }
+    }
+    return cont;
+}
+
+bool ListaSimple::existeConjunto(int valor){
+    if(this->VaciaLista()){
+        return false;
+    }
+    else{
+        NodosLista *tmp = this->PrimerNodo;
+        while(tmp){
+            if(tmp->arr == valor){
+                return true;
+            }
+            else{
+                tmp = tmp->siguiente;
+            }
+        }
+        return false;
+    }
+}

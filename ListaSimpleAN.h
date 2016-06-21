@@ -44,4 +44,8 @@ class ListaSimple{
     void Imprimir();
     //Imprime la lista de aristas de retoceso
     void ImprimirAR();
+    //Retorna el largo de la lista
+    int largoLista();
+    //Buscar elemento
+    bool existeConjunto(int);
 };

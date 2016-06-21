@@ -75,7 +75,8 @@ class Grafo{
     //Algoritmo de Prim
     void Prim(int);
     //Algoritmo de Dikstra
-    void Dijkstra(int,int);
+    void Dijkstra(int , int);
+    void Dijkstra(ListaSimple *, int PP);
     //Algoritmo de Kruskal
     void Kruskal();
     //Obtiene los puntos de articulacion de un grafo
@@ -98,8 +99,6 @@ class Grafo{
     void GeneraCiclosaux(int,int);
     //Elimina los ciclos y genera un nuevo grafo
     Grafo EliminaCiclosGrafo();
-    //Crea el grafo invertido
-    Grafo CreaGrafoInvertido();
     //Retorna si esta vacia la lista
     bool VacioGrafo(){
         return PrimerNodo==NULL;

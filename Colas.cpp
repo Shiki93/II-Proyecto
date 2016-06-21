@@ -65,3 +65,26 @@ void Cola::Imprimir(){
         delete p;
     }
 }
+
+void Cola::eliminarProcesadors(int pVF){
+    if (!PrimerNodo){
+        NodosCola *aux;
+        aux = PrimerNodo;
+        if(aux->datos == pVF){
+            PrimerNodo = aux->siguiente;
+        }
+        else{
+            while(aux){
+                if(aux->siguiente != NULL){
+                    if(aux->siguiente->datos == pVF){
+                        aux->siguiente = aux->siguiente->siguiente;
+                    }
+                    else
+                        aux = aux->siguiente;
+                }
+                else
+                    aux = aux->siguiente;
+            }
+        }
+    }
+}

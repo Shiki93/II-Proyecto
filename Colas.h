@@ -44,4 +44,5 @@ class Cola{
     int Frente();
     //Imprime la lista
     void Imprimir();
+    void eliminarProcesadors(int pVF);
 };

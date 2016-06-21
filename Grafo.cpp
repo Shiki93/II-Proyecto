@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QFile>
 #include <QTextStream>
+#include "Colas.h"
 
 Nodolista Grafo::ListaNodos(){
     NodoGrafo *nodo = PrimerNodo;
@@ -264,6 +265,67 @@ void Grafo::ImprimirMatriz(int D[TamArr][TamArr]){
     else
         qDebug()<<"Grafo Vacio\n";
 }
+
+void Grafo::Dijkstra(ListaSimple *DijkstraOUT, int PP){
+    if(this->EsConexo() && this->BuscarVerticepos(PP)){
+        ListaSimple *colaProceso;
+        Cola *CP, *respaldo;
+        int distanciaTotal = 0, process = 0;
+        NodoGrafo * aux;
+        colaProceso->InsertaFinal(PP);
+        ListaSimple *DEL;
+        bool fin = true;
+        if(this->VacioGrafo()){
+            fin = false;
+        }
+        while(this->tamano() != DEL->largoLista() + 1 && fin){
+            while(!colaProceso->VaciaLista()){
+                process = colaProceso->PrimerNodo->arr;
+                colaProceso->EliminaInicio();
+                aux = this->BuscarVerticepos(process);
+                while(aux){ // Recorre los adyacentes del vértice indicado
+                    if(!respaldo->Miembro(aux->CodVerticeGG)){
+                        respaldo->Encolar(aux->CodVerticeGG);
+                        CP->Encolar(aux->CodVerticeGG);
+                    }
+                    aux = aux->sig_vertice;
+                }
+            }
+            if(CP->Frente() != NULL)
+                distanciaTotal = CP->PrimerNodo->datos;
+            ListaSimple *eliminar;
+            // Pasa todos los elementos del frente de la cola de prioridad que tengan la misma distancia total
+            while(1){
+                if(CP->Frente() != NULL){
+                    if(CP->PrimerNodo->datos == distanciaTotal){
+                        DijkstraOUT->InsertaFinal(CP->PrimerNodo->datos);
+                        DijkstraOUT->InsertaFinal(CP->PrimerNodo->datos);
+                        DijkstraOUT->InsertaFinal(CP->PrimerNodo->datos);
+                        if(!DEL->existeConjunto(CP->PrimerNodo->datos)){
+                            DEL->InsertaFinal(CP->PrimerNodo->datos);
+                            eliminar->InsertaFinal(CP->PrimerNodo->datos);
+                            colaProceso->InsertaFinal(CP->PrimerNodo->datos);
+                        }
+                        CP->Desencolar();
+                    }
+                    else
+                        break;
+                }
+                else
+                    break;
+            }
+
+            // Eliminamos de toda la cola los elementos ya procesados y salidos de la cola
+            while(!eliminar->VaciaLista()){
+                CP->eliminarProcesadors(eliminar->PrimerNodo->arr);
+                eliminar->EliminaInicio();
+            }
+        }
+    }
+    else
+        cout << "[Warning-algoritmoDijkstra-Grafo]: Grafo NO Conexo o no existe vertice de inicio."<<endl;
+}
+
 
 void Grafo::Dijkstra(int inicio,int fin){
     NodoAdyacente *t;
@@ -572,7 +634,6 @@ void Grafo::Prim(int cod){
                 if(VectMc[i] != 0){
                     qDebug() << VectMc[i] << " ";
                     out << VectMc[i] << " ";
-                    this->GenerarArbolN(VectMc[i]);
                 }
             }
             qDebug() << "}" << endl;
@@ -913,44 +974,6 @@ ListaSimple Grafo::OrdenarAristas()
         }
     }
     return listaOr;
-}
-
-//Crea el grafo invertido
-
-Grafo Grafo::CreaGrafoInvertido()
-{
-    Grafo gi;
-    //Carga los vertices
-    gi.CargarPaises();
-    //gi.CargarAeropuertos();
-    gi.las=0;
-    char buffer[100]="";
-    char *pch;
-    int codp=0,codl=0;
-    int peso;
-    ifstream encabezados ("AristasGG.txt");
-    if(!encabezados.is_open()){
-        qDebug() << "Error archivo Aristas no existe\n";
-    }
-    else{
-        while(!encabezados.eof()){
-            encabezados.getline (buffer,100);
-            if(strcmp(buffer,"")){
-                pch = strtok (buffer,"; ");
-                codp=atoi(pch);
-                pch = strtok (NULL, ";");
-                codl=atoi(pch);
-                pch = strtok (NULL, ";");
-                peso=atoi(pch);
-                //Inserta la arista invertida
-                gi.InsertaAristas(codl,codp,peso);
-            }
-        }
-    }
-    gi.CrearMatrizAdyacencia();
-    pch=NULL;
-    delete pch;
-    return gi;
 }
 
 //Crea el grafo no dirigido

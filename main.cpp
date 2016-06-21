@@ -8,9 +8,8 @@ int main(int argc, char *argv[])
     Grafo *g = new Grafo();
     g->CrearGrafo();
 
-    //g->GenerarArbolN(11);
-
     g->Prim(11);
+    g->GenerarArbolN(11);
     g->Dijkstra(21, 11);
 
 
